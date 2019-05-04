@@ -1,0 +1,31 @@
+/* pages/discover/discover.wxss */
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+  border: 1rpx solid white;
+  border-radius: 50rpx;
+  margin: 5%;
+  
+}
+
+.card_img_view{
+  height:300rpx;
+}
+
+.card_img{
+  width: 650rpx;
+  height:300rpx;
+}
+
+.card_text_project_view{
+  border-top: solid 1rpx white;
+  width: 100%;
+}
+
+.card_text_duration_view{
+  padding-bottom: 25rpx;
+  width: 100%;
+}

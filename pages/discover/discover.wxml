@@ -1,0 +1,12 @@
+<!--pages/discover/discover.wxml-->
+<view class="page__bd page__bd_spacing">
+<view class="kind-list">
+  <block wx:for="{{items}}" wx:key="id">
+    <view id="{{item.id}}" class="card" >
+      <view class="card_img_view"><image class="card_img" src="{{item.src}}"></image></view>
+      <view class="card_text_project_view"><text class="card_text_project">{{item.text}}</text></view>
+      <view class="card_text_duration_view"><text class="card_text_duration">{{item.startDate}}-{{item.endDate}}</text></view>
+    </view>
+  </block>
+</view>
+</view>
