@@ -1,42 +1,15 @@
-// pages/discover/discover.js
-var arr_name = ["美容", "保健养生", "其他"]
-var arr_link = [1, 10, 15]
+// pages/detail/detail.js
 Page({
 
   /**
    * Page initial data
    */
-
-  // rgb(197, 197, 197)
-  
   data: {
-    items: [{
-      id: "1",
-      src: "/images/acs/1.png",
-      text: arr_name[0],
-      startDate:"2019-04-03",
-      endDate:"2019-07-21"
-    }, {
-      id: "10",
-      src: "/images/acs/2.png",
-      text: arr_name[1],
-      startDate: "2019-04-03",
-      endDate: "2019-07-21"
-    }, {
-      id: "15",
-      src: "/images/acs/3.png",
-      text: arr_name[2],
-      startDate: "2019-04-03",
-      endDate: "2019-07-21"
-    }],
-  },
-
-  viewDetail: function(e){
-    var id = e.currentTarget.id
-    console.log(e)
-    wx.navigateTo({
-      url:"/pages/detail/detail?id="+id,
-    })
+    project:{
+      name:"软件工程",
+      start:"2019/04/05",
+      end:"2019/07/05"
+    }
   },
 
   /**

@@ -3,7 +3,8 @@
     "pages/discover/discover",
     "pages/logs/logs",
     "pages/home/home",
-    "pages/myProjects/myProjects"
+    "pages/myProjects/myProjects",
+    "pages/detail/detail"
   ],
   "window":{
     "navigationBarBackgroundColor": "#000000",
