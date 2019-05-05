@@ -43,7 +43,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    var id=1
+    wx.navigateTo({
+      url: "/pages/detail/detail?id=" + id,
+    })
   },
 
   /**

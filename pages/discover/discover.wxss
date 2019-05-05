@@ -8,7 +8,8 @@
   border: 1rpx solid white;
   border-radius: 50rpx;
   margin: 5%;
-  box-shadow: 5rpx 5rpx 40rpx white;
+  margin-bottom: 40rpx;
+  box-shadow: 10rpx 10rpx 60rpx white;
 }
 
 .card_img_view{
