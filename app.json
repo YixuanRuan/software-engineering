@@ -4,7 +4,10 @@
     "pages/logs/logs",
     "pages/home/home",
     "pages/myProjects/myProjects",
-    "pages/detail/detail"
+    "pages/myProjects/manageProject/manageProject",
+    "pages/myProjects/alterProject/alterProject",
+    "pages/detail/detail",
+    "pages/addProject/addProject"
   ],
   "window":{
     "navigationBarBackgroundColor": "#000000",

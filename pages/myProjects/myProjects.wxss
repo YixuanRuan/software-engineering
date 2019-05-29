@@ -1,1 +1,54 @@
-/* pages/myProjects/myProjects.wxss */
+/* pages/discover/discover.wxss */
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width:90%;
+  border: 1rpx solid white;
+  border-radius: 50rpx;
+  margin: 5%;
+  margin-bottom: 40rpx;
+  box-shadow: 5rpx 5rpx 30rpx 5rpx white;
+}
+
+.card_img_view{
+  height:300rpx;
+}
+
+.card_img{
+  min-width: 100%;
+  min-height: 100%;
+  max-width:100%;
+  max-height: 100%;
+  border-top-right-radius:49rpx;
+  border-top-left-radius:49rpx;
+}
+
+.card_project_view{
+  display: flex;
+  align-items: center;
+  border-top: solid 1rpx white;
+  width: 100%;
+  padding-top: 5rpx;
+}
+
+.card_duration_view{
+  display: flex;
+  align-items: center;
+  padding-bottom: 10rpx;
+  width: 100%;
+}
+
+.card_project_img, .card_duration_img{
+  height: 25rpx;
+  max-width: 4%;
+  padding-left: 30rpx;
+  padding-right: 10rpx;
+}
+
+.card_project_text, .card_duration_text{
+    font-size: 30rpx;
+    color: white;
+}
+

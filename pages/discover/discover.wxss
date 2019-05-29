@@ -9,7 +9,7 @@
   border-radius: 50rpx;
   margin: 5%;
   margin-bottom: 40rpx;
-  box-shadow: 10rpx 10rpx 60rpx white;
+  box-shadow: 5rpx 5rpx 30rpx 5rpx white;
 }
 
 .card_img_view{

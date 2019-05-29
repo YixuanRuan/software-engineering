@@ -1,38 +1,53 @@
 <!--pages/detail/detail.wxml-->
 <view class="page">
+  <view class="page__hd">
+      <view class="page__title">{{project.projectContent}}</view>
+      <view class="page__desc">请联系负责人建群沟通，不要私自创建子项目</view>
+  </view>
+
   <view class="cells_title">基本信息</view>
   <view class="cells_body">
     <view class="cell">
-      <image class="cell_img" src="/images/acs/project.png"></image>
-      <text class="cell_text">{{project.name}}</text>
+      <image class="cell_img" src="/images/detail/project_333.png"></image>
+      <text class="cell_text">项目名称：{{project.projectContent}}</text>
     </view>
     <view class="cell">
-      <image class="cell_img" src="/images/acs/clock.png"></image>
-      <text class="cell_text">{{project.start}}-{{project.end}}</text>
+      <image class="cell_img" src="/images/detail/clock_333.png"></image>
+      <text class="cell_text">项目时间：{{project.createTime}} - {{project.overTime}}</text>
+    </view>
+        <view class="cell">
+      <image class="cell_img" src="/images/detail/compass_333.png"></image>
+      <text class="cell_text">当前人数：{{project.currentPeople}}/{{project.people}}</text>
     </view>
   </view>
 
   <view class="cells_title">发起人</view>
   <view class="cells_body">
     <view class="cell">
-      <image class="cell_img" src="/images/detail/person.png"></image>
-      <text class="cell_text">{{project.laucherName}}</text>
+      <image class="cell_img" src="/images/detail/person_333.png"></image>
+      <text class="cell_text">姓名：{{project.name}}</text>
     </view>
     <view class="cell">
-      <image class="cell_img" src="/images/detail/phone.png"></image>
-      <text class="cell_text">{{project.laucherPhone}}</text>
-    </view>
-    <view class="cell">
-      <image class="cell_img" src="/images/detail/email.png"></image>
-      <text class="cell_text">{{project.laucherEmail}}</text>
+      <image class="cell_img" src="/images/detail/phone_333.png"></image>
+      <text class="cell_text">电话：{{project.phone}}</text>
     </view>
   </view>
 
-  <view class="cells_title">简介</view>
+  <view class="cells_title">项目要求</view>
   <view class="cells_body">
     <view class="cell">
-      <text class="texts">{{project.brief}}</text>
+      <text class="texts">{{project.pjRequirement}}</text>
     </view>
   </view>
 
+    <view class="cells_title">项目回报</view>
+  <view class="cells_body">
+    <view class="cell">
+      <text class="texts weight">{{project.weight}}</text>
+    </view>
+  </view>
+  
+  <view class="btn-area">
+    <button class="weui-btn" type="primary" bindtap="join">报名活动</button>
+  </view>
 </view>

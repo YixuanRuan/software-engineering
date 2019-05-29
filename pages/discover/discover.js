@@ -43,9 +43,11 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var id=1
     wx.navigateTo({
-      url: "/pages/detail/detail?id=" + id,
+      // url: "/pages/myProjects/manageProject/manageProject?id=1&isMyProject=true",
+      // url: "/pages/myProjects/alterProject/alterProject?id=1",
+      // url: "/pages/detail/detail?id=" + id,
+      url: "/pages/addProject/addProject?parentProjectId=0",
     })
   },
 
