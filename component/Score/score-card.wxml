@@ -1,0 +1,26 @@
+<view class='judge-item'>
+  <wux-skeleton active >
+      <wux-row>
+          <wux-col span="1">
+          </wux-col>
+          <wux-col span="2">
+              <image src="../../resources/avatar.jpg" class="avatar"></image>
+          </wux-col>
+          <wux-col span="1">
+          </wux-col>
+          <wux-col span="8">
+              <text space='ensp' class='user-info user-name'>用户 ID：  {{userID}}\n</text>
+              <text space='ensp' class='user-info user-task'>负责任务： {{userTask}}\n</text>
+              <view bindtap="onCheckboxChange">
+                <text space='ensp' class='user-info'>是否完成： </text>
+                
+                <wux-selectable slot="footer" wux-class="checkbox" type="radio" value="{{ items[0].value }}" checked="{{ checked }}" controlled />
+              </view>
+              <view>
+                <text space='ensp' class='user-info'>完成情况： </text>
+                <wux-rater slot="footer" max='3' default-value="{{ 0 }}" />
+              </view>
+          </wux-col>
+    </wux-row>
+  </wux-skeleton>
+</view>

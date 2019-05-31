@@ -1,0 +1,27 @@
+  <view class="container">
+    <image src="../../resources/avatar.jpg" class="avatar">
+    </image>
+    <text class='info-name'>Kika</text>
+    <text class='info-email'>K@mockingbot.com</text>
+    <view class="section">
+    <navigator hover-class="none" url="../edit-info/edit-info">
+      <view class="item" data-pay="wechat" bindtap="onItemClick">
+        <image src="../../resources/person-info.png" class="icon"></image>
+          <text  class="pay-text">修改个人信息</text>
+      </view>
+      </navigator>
+      <wux-divider text="通知中心" />
+      <project-notice/>
+      <project-notice/>
+      <project-notice/>
+      <project-notice/>
+      <view class='footer'>
+        <view class='footer-item'>
+          <image src="../../resources/email.png" class="footer-icon"></image>
+          <text class="pay-text">联系我们</text>
+        </view>
+    
+      </view>
+    </view>
+  </view>
+

@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "树协作",
+  "navigationBarBackgroundColor": "#2A94EE",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "project-card": "../../component/Card/project-search",
+    "movable-button": "../../component/Button/movable-button",
+    "project-notice": "../../component/Notice/project-notice",
+    "score-card": "../../component/Score/score-card",
+    "wux-selectable": "../../dist/selectable/index",
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-divider": "../../dist/divider/index",
+    "wux-button": "../../dist/button/index",
+    "wux-icon": "../../dist/icon/index",
+    "wux-rater": "../../dist/rater/index"
+  }
+}

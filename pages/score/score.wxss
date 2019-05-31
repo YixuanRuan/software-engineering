@@ -1,0 +1,9 @@
+.project-title{
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto 20px;
+}
+
+.divider-space{
+  height: 20px;
+}

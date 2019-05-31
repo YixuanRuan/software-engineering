@@ -1,0 +1,10 @@
+<view class="page">
+      <wux-search-bar clear maxlength="8" />
+      <project-card />
+      <project-card />
+      <project-card />
+      <project-card />
+      <view class='card-space'></view>
+</view>
+
+<movable-button />

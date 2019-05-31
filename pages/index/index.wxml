@@ -1,0 +1,10 @@
+<view class='project-title'>
+  <text>软件工程大作业</text>
+</view>
+<wux-divider text="评分表" />
+
+<score-card></score-card>
+<score-card></score-card>
+<score-card></score-card>
+<score-card></score-card>
+<wux-button block type="balanced"><wux-icon type="ios-cloud-upload" size="16" />  提交</wux-button>
