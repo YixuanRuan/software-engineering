@@ -3,9 +3,9 @@
 </view>
 <wux-divider text="评分表" />
 
-<score-card></score-card>
-<score-card></score-card>
-<score-card></score-card>
-<score-card></score-card>
+<score-card avatarSrc = '../../resources/avatar1.jpg'/>
+<score-card userID = '16721063' userTask = '后端开发' avatarSrc = '../../resources/avatar2.jpg'/>
+<score-card userID = '17372839' userTask = 'UI 设计' avatarSrc = '../../resources/avatar3.jpg'/>
+<score-card userID = '17373244' userTask = '美术设计' avatarSrc = '../../resources/avatar4.jpg'/>
 <wux-button block type="balanced"><wux-icon type="ios-cloud-upload" size="16" />  提交</wux-button>
 <movable-button />

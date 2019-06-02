@@ -12,9 +12,9 @@
       </navigator>
       <wux-divider text="通知中心" />
       <project-notice/>
-      <project-notice/>
-      <project-notice/>
-      <project-notice/>
+      <project-notice noticeTitle = '项目删除通知' noticeContent = 'XX 项目已被删除'/>
+      <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员退出'/>
+      <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员加入'/>
       <view class='footer'>
         <view class='footer-item'>
           <image src="../../resources/email.png" class="footer-icon"></image>
@@ -24,4 +24,4 @@
       </view>
     </view>
   </view>
-
+<movable-button />

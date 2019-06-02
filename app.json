@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/search/search",
-    "pages/score/score",
-    "pages/self-info/self-info",
     "pages/index/index",
+    "pages/self-info/self-info",
+    
+    "pages/score/score",
     "pages/edit-info/edit-info",
     "pages/logs/logs"
     

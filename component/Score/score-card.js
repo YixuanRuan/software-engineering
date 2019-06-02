@@ -19,6 +19,10 @@ Component({
     userTask:{ 
       type: String,
       value: '前端开发'
+    },
+    avatarSrc:{
+      type: String,
+      value: '../../resources/avatar.jpg'
     }
   },
 

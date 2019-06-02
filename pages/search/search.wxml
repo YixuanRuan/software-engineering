@@ -1,9 +1,9 @@
 <view class="page">
       <wux-search-bar clear maxlength="8" />
-      <project-card />
-      <project-card />
-      <project-card />
-      <project-card />
+      <project-card projectType = '0' />
+      <project-card projectType = '1' projectName='宣传视频剪辑' remainingDay='5' personNum = '2'/>
+      <project-card projectType = '2' projectName='荧光夜跑活动' remainingDay='17' personNum = '12'/>
+      <project-card projectType = '0' projectName='冯如杯项目开发' remainingDay='28' personNum = '4'/>
       <view class='card-space'></view>
 </view>
 

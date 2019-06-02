@@ -6,6 +6,7 @@
     "project-card": "../../component/Card/project-search",
     "movable-button": "../../component/Button/movable-button",
     "project-notice": "../../component/Notice/project-notice",
+    "project-swiper": "../../component/Swiper/swiper",
     "score-card": "../../component/Score/score-card",
     "wux-selectable": "../../dist/selectable/index",
     "wux-cell-group": "../../dist/cell-group/index",

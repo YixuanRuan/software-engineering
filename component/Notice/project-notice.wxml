@@ -11,15 +11,15 @@
     </wux-tabbar-item>
     <wux-tabbar-item class='notice-text'>
       <text class='notice-title'>
-        项目进度通知
+        {{noticeTitle}}
       </text>
       <text class='notice-content'>
-        XX 项目已通过申请
+        {{noticeContent}}
       </text>
     </wux-tabbar-item>
     <wux-tabbar-item >
-      <text class='notice-time' space='emsp'>\n  2019.10.12</text>
-      <text class='notice-time' space='emsp'>\n\n    11:07</text>
+      <text class='notice-time' space='emsp'>\n  {{noticeDate}}</text>
+      <text class='notice-time' space='emsp'>\n\n    {{noticeTime}}</text>
     </wux-tabbar-item>
 </wux-tabbar>
 <wux-divider show-text="{{ false }}" class='notice-divider' />

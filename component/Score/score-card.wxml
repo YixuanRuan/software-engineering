@@ -4,7 +4,7 @@
           <wux-col span="1">
           </wux-col>
           <wux-col span="2">
-              <image src="../../resources/avatar.jpg" class="avatar"></image>
+              <image src="{{avatarSrc}}" class="avatar"></image>
           </wux-col>
           <wux-col span="1">
           </wux-col>
