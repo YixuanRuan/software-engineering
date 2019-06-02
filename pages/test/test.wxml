@@ -1,0 +1,17 @@
+<wux-popup position="right" visible="{{ visible2 }}" bind:close="onClose2">
+    <wux-cell-group title="Your fathers">
+        <wux-cell hover-class="none">
+          <text>  </text>
+        </wux-cell>
+        <wux-cell hover-class="none" title="Pony"></wux-cell>
+        <wux-cell hover-class="none">
+            <wux-button block type="balanced" bindtap="close2">Yes</wux-button>
+        </wux-cell>
+    </wux-cell-group>
+</wux-popup>
+
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <wux-button block type="light" bind:click="open2">Popup</wux-button>
+    </view>
+</view>

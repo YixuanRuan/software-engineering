@@ -1,1 +1,5 @@
-<project-swiper />
+<view wx:for="{{list}}" wx:key="list">
+  <view>{{item.userId}}</view>
+  <view>{{item.phone}}</view>
+  <view>{{userID}}</view>
+</view>
