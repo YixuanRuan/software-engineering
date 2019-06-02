@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/discover/discover",
     "pages/logs/logs",
     "pages/home/home",
@@ -9,41 +9,40 @@
     "pages/detail/detail",
     "pages/addProject/addProject"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTextStyle": "white",
-    "navigationStyle":"default",
+    "navigationStyle": "default",
     "navigationBarTitleText": "树协作",
-    
-    "backgroundColor":"#000000",
-    "backgroundTextStyle":"light",
-
-    "enablePullDownRefresh":true
+    "backgroundColor": "#000000",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
-      "backgroundColor":"#000000",
-      "color": "#ffffff",
-      "selectedColor": "#65c0ff",
-      "borderStyle": "black",
-      "list": [
-        {
-          "selectedIconPath": "images/tabbar/home2.png",
-          "iconPath": "images/tabbar/home1.png",
-          "pagePath": "pages/myProjects/myProjects",
-          "text": "我的项目"
-        },
-        {
-          "selectedIconPath": "images/tabbar/compass2.png",
-          "iconPath": "images/tabbar/compass1.png",
-          "pagePath": "pages/discover/discover",
-          "text": "发现"
-        },
-        {
-          "selectedIconPath": "images/tabbar/code2.png",
-          "iconPath": "images/tabbar/code1.png",
-          "pagePath": "pages/home/home",
-          "text": "我的主页"
-        }
-      ]
-    }
+    "backgroundColor": "#000000",
+    "color": "#ffffff",
+    "selectedColor": "#65c0ff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/tabbar/home2.png",
+        "iconPath": "images/tabbar/home1.png",
+        "pagePath": "pages/myProjects/myProjects",
+        "text": "我的项目"
+      },
+      {
+        "selectedIconPath": "images/tabbar/compass2.png",
+        "iconPath": "images/tabbar/compass1.png",
+        "pagePath": "pages/discover/discover",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "images/tabbar/code2.png",
+        "iconPath": "images/tabbar/code1.png",
+        "pagePath": "pages/home/home",
+        "text": "我的主页"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
