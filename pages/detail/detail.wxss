@@ -1,0 +1,87 @@
+/* pages/detail/detail.wxss */
+.page{
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.cells_title{
+  margin-top:20rpx;
+  margin-bottom:15rpx;
+  padding-left:20rpx;
+  padding-right:30rpx;
+  color:#999;
+  position: relative;
+  font-size:30rpx
+}
+
+.cells_title:after{
+content:" ";
+position:absolute;
+left:20rpx;
+top:0rpx;
+right:20rpx;
+height:49rpx;
+border-bottom:1rpx solid #d9d9d9;
+color:#d9d9d9;
+}
+
+.cell{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+
+.cell_img{
+  height: 25rpx;
+  max-width: 4%;
+  padding-right: 10rpx;
+}
+
+.cell_text{
+  font-size:35rpx;
+}
+
+.texts{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  width:100%;
+  height:200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;/**不换行**/
+  display: box;
+  overflow-y:scroll;
+}
+
+.weight{
+  height:100rpx;
+}
+
+.texts::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 20rpx;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 2rpx;
+}
+
+.texts::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 20rpx;
+    -webkit-box-shadow: inset 0 0 10rpx rgba(0,0,0,0.2);
+  background: #535353;
+}
+
+.texts::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 10rpx rgba(0,0,0,0.2);
+  border-radius: 20rpx;
+  background: #EDEDED;
+}
+
+.btn-area{
+  margin-top: 5rpx;
+}
+
+
+
+
+

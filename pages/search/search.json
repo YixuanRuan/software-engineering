@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "发现广场",
+  "usingComponents": {
+    "project-card": "../../component/Card/project-search",
+    "movable-button": "../../component/Button/movable-button",
+    "wux-search-bar": "../../dist/search-bar/index"
+  }
+}

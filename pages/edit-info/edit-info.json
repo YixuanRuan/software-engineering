@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "树协作",
+  "navigationBarBackgroundColor": "#2A94EE",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-input": "../../dist/input/index",
+    "wux-icon": "../../dist/icon/index",
+    "wux-select": "../../dist/select/index",
+    "wux-textarea": "../../dist/textarea/index",
+    "wux-button": "../../dist/button/index"
+  }
+}

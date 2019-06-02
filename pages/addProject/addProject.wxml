@@ -1,0 +1,91 @@
+<!--pages/addProject/addProject.wxml-->
+<view class="page">
+  <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tips}}</view>
+  <view class="page__hd">
+      <view class="page__title">项目发布</view>
+      <view class="page__desc">项目信息填写</view>
+  </view>
+  <form bindsubmit="formSubmit">
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+  <!--项目名称-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">项目名称</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="projectContent" placeholder="请输入项目名称" value="{{projectInfo.projectContent}}" />
+        </view>
+      </view>
+
+  <!--项目要求-->
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">项目要求</view>
+        </view>
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea texts" name="pjRequirement" value="{{projectInfo.pjRequirement}}" placeholder='例如：需要制作一个5分钟的宣传视频，风格参考：url，要求有相关制作经验'> </textarea>
+        </view>
+      </view>
+
+  <!--项目回报-->
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">项目回报</view>
+        </view>
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea texts weight" name="weight" value="{{projectInfo.weight}}" placeholder='例如：每个人分配8小时志愿时长（设置好每个人可以分配的资源方便成员创建子项目）'> </textarea>
+        </view>
+      </view>
+
+  <!--项目开始时间-->
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">开始时间</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" name="createTime" value="{{projectInfo.createTime}}" start="2017-06-01" end="2021-12-30" bindchange="bindCreateTimeChange">
+            <view class="weui-select weui-select_in-select-after">{{projectInfo.createTime}}</view>
+          </picker>
+        </view>
+      </view>
+
+  <!--截止时间-->
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">截止时间</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="date" name="overTime" value="{{projectInfo.overTime}}" start="2017-06-01" end="2021-12-30" bindchange="bindOverTimeChange">
+            <view class="weui-select weui-select_in-select-after">{{projectInfo.overTime}}</view>
+          </picker>
+        </view>
+      </view>
+
+  <!--项目需要人数-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">需要人数</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="people" placeholder="请输入需要人数" value="{{projectInfo.people}}" />
+        </view>
+      </view>
+
+  <!--项目当前人数-->
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">当前人数</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="currentPeople" placeholder="请输入当前人数" value="{{projectInfo.currentPeople}}" />
+        </view>
+      </view>
+    </view>
+    
+    <view class="btn-area">
+      <button class="weui-btn" type="primary" formType="submit">提交</button>
+    </view>
+
+  </form>
+</view>

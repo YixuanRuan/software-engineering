@@ -1,0 +1,40 @@
+/* pages/addProject/addProject.wxss */
+page{
+  background-color: #F8F8F8;
+  color:#000000 ;
+  font-size: 16px;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.texts{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  width:100%;
+  height:200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;/**不换行**/
+  display: box;
+  overflow-y:auto;
+}
+
+.weight{
+  height:150rpx;
+}
+
+.texts::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 20rpx;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 2rpx;
+}
+
+.texts::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 20rpx;
+  -webkit-box-shadow: inset 0 0 10rpx rgba(0,0,0,0.2);
+  background: #535353;
+}
+
+.texts::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 10rpx rgba(0,0,0,0.2);
+  border-radius: 20rpx;
+  background: #EDEDED;
+}

@@ -1,0 +1,39 @@
+<view class='card-cover'>
+  <view class='card-imag'>
+    <image class='card-image' mode="aspectFit" src='{{image}}'></image>
+  </view>
+  <view class='card  card-shadow'>
+
+    <view class='nearCard-fr'>
+      <wux-row>
+        <wux-col span="6">
+          <text style='font-size:40rpx;font-weight:595;'>{{projectName}}</text>
+        </wux-col>
+        <wux-col class='project-name' span="2">
+        </wux-col>
+        <wux-col span="4">
+        <text style='font-size:25rpx;'>还有\t</text>
+        <text style='font-size:40rpx;'>{{remainingDay}}\t</text>
+        <text style='font-size:25rpx;'>天</text>
+        </wux-col>
+      </wux-row>
+      <wux-row>
+        <wux-col span="1">
+            <wux-icon type="md-time" size="20" />
+        </wux-col>
+        <wux-col span="7">
+          <text class='time'>{{startTime}} - {{endTime}}</text>
+        </wux-col>
+        <wux-col span="0">
+        </wux-col>
+        <wux-col span="1">
+          <wux-icon type="md-people" size="22" />
+        </wux-col>
+        <wux-col span="3">
+          <text space="ensp" style='font-size:35rpx;'> {{personNum}}\t</text>
+          <text style='font-size:25rpx;'>人参与</text>
+        </wux-col>
+      </wux-row>
+    </view>
+  </view>
+</view>

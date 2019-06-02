@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "project-card": "../../component/Card/project-search"
+  }
+}

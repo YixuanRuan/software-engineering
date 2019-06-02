@@ -1,0 +1,74 @@
+<!--pages/myProjects/manageProject/manageProject.wxml-->
+<!-- 横向滑动列表 -->
+
+<view class="page">
+  <view class="page__hd">
+      <view class="page__title">{{project.projectContent}}</view>
+      <view class="page__desc">请联系负责人建群沟通，不要私自创建子项目</view>
+  </view>
+
+  <view class="cells_title">子项目</view>
+  <scroll-view scroll-x class="scroll-x">
+    <view wx:for="{{project.subProjects}}" wx:key="{{index}}" class="view-parent">
+      <view class="view-item" bindtap="goToProject">{{item.projectContent}}</view>
+    </view>
+  </scroll-view>
+
+  <view class="cells_title">基本信息</view>
+  <view class="cells_body">
+    <view class="cell">
+      <image class="cell_img" src="/images/detail/project_333.png"></image>
+      <text class="cell_text">项目名称：{{project.projectContent}}</text>
+    </view>
+    <view class="cell">
+      <image class="cell_img" src="/images/detail/clock_333.png"></image>
+      <text class="cell_text">项目时间：{{project.createTime}} - {{project.overTime}}</text>
+    </view>
+        <view class="cell">
+      <image class="cell_img" src="/images/detail/compass_333.png"></image>
+      <text class="cell_text">当前人数：{{project.currentPeople}}/{{project.people}}</text>
+    </view>
+  </view>
+
+  <view class="cells_title">发起人</view>
+  <view class="cells_body">
+    <view class="cell">
+      <image class="cell_img" src="/images/detail/person_333.png"></image>
+      <text class="cell_text">姓名：{{project.name}}</text>
+    </view>
+    <view class="cell">
+      <image class="cell_img" src="/images/detail/phone_333.png"></image>
+      <text class="cell_text">电话：{{project.phone}}</text>
+    </view>
+  </view>
+
+  <view class="cells_title">项目要求</view>
+  <view class="cells_body">
+    <view class="cell">
+      <text class="texts">{{project.pjRequirement}}</text>
+    </view> 
+  </view>
+
+  <view class="cells_title">项目回报</view>
+  <view class="cells_body">
+    <view class="cell">
+      <text class="texts weight">{{project.weight}}</text>
+    </view>
+  </view>
+  
+  <view wx:if="{{project.isJoined}}" class="btn-area">
+    <button class="weui-btn" type="primary" bindtap="createSubproject">创建子项目</button>
+  </view>
+
+  <view wx:if="{{project.isJoined}}" class="btn-area">
+    <button class="weui-btn" type="warn" bindtap="quitProject">退出项目</button>
+  </view>
+
+  <view wx:if="{{project.isLaucher}}" class="btn-area">
+    <button class="weui-btn" type="primary" bindtap="alterProject">修改项目</button>
+  </view>
+
+  <view wx:if="{{project.isLaucher}}" class="btn-area">
+    <button class="weui-btn" type="warn" bindtap="deleteProject">删除整个项目</button>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<view class="page">
+  <wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
+      <block wx:for="{{ tabs }}" wx:key="key">
+          <wux-tab key="{{ item.key }}" title="{{ item.title }}"></wux-tab>
+      </block>
+  </wux-tabs>
+  <swiper style="height:{{swiperHeight}}rpx;" current="{{ index }}" bindchange="onSwiperChange">
+    <block wx:for="{{ tabs }}" wx:key="key">
+        <swiper-item class="swiper-item">
+          <block wx:for="{{item.content}}" wx:key="projectId">
+            <project-card projectId="{{item.projectId}}" projectName='{{item.projectContent}}' startTime="{{item.startDate}}" endTime="{{item.endDate}}" remainingDay='5' personNum = '2' bindtap='manageProject'/>
+          </block>
+          <view class='card-space'></view>
+        </swiper-item>
+    </block>
+  </swiper>
+</view>
+<movable-button />

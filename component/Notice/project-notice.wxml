@@ -1,0 +1,25 @@
+<wux-tabbar defaultCurrent="1" controlled current="{{ current }}" bindchange="onChange" class="notice-wrap">
+    <wux-tabbar-item title="Tab 1">
+        <wux-badge dot slot="icon-on">
+          <view class='notice-view'>
+            <wux-icon wux-class="icon" type="ios-notifications" size="40" color='white'/>
+          </view>
+        </wux-badge>
+        <wux-badge dot slot="icon-off">
+            <wux-icon wux-class="icon" type="ios-home" size="22" />
+        </wux-badge>
+    </wux-tabbar-item>
+    <wux-tabbar-item class='notice-text'>
+      <text class='notice-title'>
+        {{noticeTitle}}
+      </text>
+      <text class='notice-content'>
+        {{noticeContent}}
+      </text>
+    </wux-tabbar-item>
+    <wux-tabbar-item >
+      <text class='notice-time' space='emsp'>\n  {{noticeDate}}</text>
+      <text class='notice-time' space='emsp'>\n\n    {{noticeTime}}</text>
+    </wux-tabbar-item>
+</wux-tabbar>
+<wux-divider show-text="{{ false }}" class='notice-divider' />

@@ -1,0 +1,48 @@
+.card {
+  width: 89%;
+  background-color: #fff;
+  margin: 20rpx auto 0;
+  border-radius: 10rpx;
+}
+
+.card-shadow {
+  box-shadow: 5rpx 5rpx 8rpx #999;
+}
+.nearCard-fr {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 27rpx;
+  line-height: 55rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 15rpx;
+  color: #999;
+}
+
+.nearCard-fr text {
+  font-size: 22rpx;
+}
+.c-green {
+  color: #41aaa8;
+}
+
+.card-image{
+  box-shadow: 5rpx 5rpx 8rpx #999;
+  height: 228rpx;
+  width: 89%;
+  vertical-align: bottom;
+  margin:50rpx 40rpx -15rpx;
+  border-radius: 10rpx;
+}
+
+.wux-row{
+  width: 100%;
+  margin-left: -30rpx;
+  padding-top: 20rpx;
+}
+
+text.time{
+  font-size:26rpx;
+  padding-bottom: 30rpx;
+  vertical-align:middle;
+}

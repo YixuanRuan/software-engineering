@@ -1,0 +1,7 @@
+.card-space{
+  height: 30px;
+}
+
+.swiper{
+  height: 200000rpx;
+}

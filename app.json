@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/search/search",
+    "pages/self-info/self-info",
+    "pages/score/score",
+    "pages/edit-info/edit-info",
+    "pages/myProjects/myProjects",
+    "pages/myProjects/manageProject/manageProject",
+    "pages/myProjects/alterProject/alterProject",
+    "pages/detail/detail",
+    "pages/addProject/addProject"
+  ],
+  "window": {
+    "navigationBarTitleText": "树协作",
+    "navigationBarBackgroundColor": "#2A94EE",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "light"
+  },
+
+  "sitemapLocation": "sitemap.json"
+}

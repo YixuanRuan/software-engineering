@@ -1,0 +1,35 @@
+/* component/Notice/project-notice.wxss */
+.notice-view{
+  width: 50px;
+  height: 50px;
+  background-color:#4169e1;
+  border-radius: 10%;
+  margin-left: -20px;
+}
+
+.icon{
+  margin: 5px auto 5px;
+}
+
+.notice-text{
+  width: 100%;
+}
+.notice-title{
+  align-self: flex-start;
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+.notice-content{
+  font-size: 12px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.notice-time{
+  text-align: right；
+}
+
+.notice-wrap{
+  margin: 5px;
+}
