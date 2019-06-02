@@ -2,7 +2,6 @@
   "navigationBarTitleText": "项目管理",
   "usingComponents": {
     "project-card": "../../component/Card/project-search",
-    "movable-button": "../../component/Button/movable-button",
     "wux-tabs": "../../dist/tabs/index",
     "wux-tab": "../../dist/tab/index",
     "wux-badge": "../../dist/badge/index"

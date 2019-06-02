@@ -5,7 +5,6 @@
   "usingComponents": {
     "wux-icon": "../../dist/icon/index",
     "wux-divider": "../../dist/divider/index",
-    "movable-button": "../../component/Button/movable-button",
     "project-notice": "../../component/Notice/project-notice"
   }
 }

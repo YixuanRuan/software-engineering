@@ -15,11 +15,10 @@ Page({
   },
 
   goToProject: function(){
-    if (this.data.project.isMyProject){
+    if (this.data.project.isJoined){
       var id = 2
-      var isMyProject = false
       wx.navigateTo({
-        url: "/pages/myProjects/manageProject/manageProject?id=" + id + "&isMyProject=" + isMyProject,
+        url: "/pages/myProjects/manageProject/manageProject?id=" + id,
         // url: "/pages/myProjects/alterProject/alterProject?id=" + id,
         // url: "/pages/detail/detail?id=" + id,
         // url: "/pages/addProject/addProject",

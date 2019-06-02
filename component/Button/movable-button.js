@@ -8,10 +8,6 @@ const buttons = [{
   icon: '../../resources/person.png'
 },
 {
-  label: '查找',
-  icon: '../../resources/find.png'
-},
-{
   label: '新建项目',
   icon: '../../resources/new.png'
 },
@@ -44,11 +40,6 @@ Page({
       })
     }
     else if (e.detail.index === 2) {
-      wx.navigateTo({
-        url: '../../pages/search/search'
-      })
-    }
-    else if (e.detail.index === 3) {
       wx.navigateTo({
         url: '../../pages/addProject/addProject?parentProjectId=0'
       })
