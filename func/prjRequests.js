@@ -116,7 +116,22 @@ function deleteProject(userId, projectId) {
   })
 }
 
-
+function getUserId(code){
+  wx.request({
+    url: 'http://114.115.151.96:8080/login/auth', //仅为示例，并非真实的接口地址
+    data: {
+      code: code,
+    },
+    method: "POST",
+    header: {
+      'content-type': 'application/json' // 默认值
+    },
+    success(res) {
+      console.log(res.data)
+      return res.data
+    }
+  })
+}
 
 module.exports.getProjectByProjectIdAndUserId = getProjectByProjectIdAndUserId;
 module.exports.getAllProjects = getAllProjects;
@@ -126,6 +141,7 @@ module.exports.addProject = addProject;
 module.exports.joinProject = joinProject;
 module.exports.quitProject = quitProject;
 module.exports.deleteProject = deleteProject;
+module.exports.getUserId = getUserId;
 
 var project = {
   isJoined: true,
