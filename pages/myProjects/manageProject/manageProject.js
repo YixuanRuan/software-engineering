@@ -18,7 +18,7 @@ Page({
     if (this.data.project.isJoined){
       var id = 2
       wx.navigateTo({
-        url: "/pages/myProjects/manageProject/manageProject?id=" + id,
+        url: "/pages/myProjects/manageProject/manageProject?projectId=" + id,
         // url: "/pages/myProjects/alterProject/alterProject?id=" + id,
         // url: "/pages/detail/detail?id=" + id,
         // url: "/pages/addProject/addProject",
@@ -41,11 +41,15 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var args = { userId: app.globalData.openId, projectId: options.id}
-    var a=requests.getProjectByProjectIdAndUserId(args);
-    console.log(a)
+    var projectInfo = null
+    requests.getProjectByProjectIdAndUserId(app.globalData.openId, options.id).then(
+      data=>{
+        projectInfo=data
+      }
+    )
+    console.log(projectInfo)
     this.setData({
-      project:a
+      project: projectInfo
     })
   },
 

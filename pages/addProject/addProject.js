@@ -133,7 +133,11 @@ Page({
               'projectInfo.people': parseInt(data.people),
             });
             console.log(that.data.projectInfo)
-            requests.submitProjectInfo(that.data.projectInfo)
+            requests.submitProjectInfo(that.data.projectInfo).then(
+              data=>{
+                console.log(data)
+              }
+            )
           } else {
             console.log('用户点击返回操作')
           }

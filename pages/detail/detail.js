@@ -1,10 +1,13 @@
 // pages/detail/detail.js
+const requests=require("../../func/prjRequests.js")
+const app = getApp()
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    projectId:0,
     project:{
       projectId:"",
       projectContent:"软件工程",
@@ -23,67 +26,32 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var id=this.data.project.projectId;
+    var projectId = options.projectId;
     this.setData({
-      id: options.id,
+      projectId: options.projectId,
     })
-    this.getProjectInfo()
-  },
-
-  getProjectInfo: function(){
-
+    var that=this
+    requests.getProjectByProjectIdAndUserId(app.globalData.openId, projectId).then(
+      data=>{
+        that.setData({
+          project:data
+        })
+      }
+    )
   },
 
   join: function(){
-
+    requests.joinProject(app.globalData.openId,this.data.projectId).then(
+      data=>{
+        wx.showToast({
+          title: '成功加入项目！'
+        })
+        setTimeout(function () {
+          wx.navigateBack({
+            delta: 1
+          });
+        }, 700)
+      }
+    )
   },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })

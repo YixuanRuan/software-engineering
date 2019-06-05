@@ -12,11 +12,17 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res)
-        requests.getUserId(res.code)
+        requests.getUserId(res.code).then(
+          data => {
+            this.globalData.openId = data
+            console.log("用户id是")
+            console.log(this.globalData.openId)
+          }
+        )
       }
     })
   },
   globalData: {
-    userInfo: null
+    openId:0
   }
 })

@@ -19,7 +19,7 @@ Page({
     ],
   },
   manageProject: function (e) {
-    var id = e.currentTarget.id
+    var projectId = e.currentTarget.id
     console.log(e)
     wx.navigateTo({
       url: "/pages/myProjects/manageProject/manageProject?id=" + id,
@@ -57,18 +57,32 @@ Page({
     }
   },
   onShow: function () {
-    var args = { userId: app.globalData.openId}
-    var joinedTasks = requests.getJoinedProjects(args);
-    var lauchedTasks = requests.getLauchedProjects(args);
-    console.log("joinedTasks:")
-    console.log(joinedTasks)
-    console.log("lauchedTasks:")
-    console.log(lauchedTasks)
-    var height = Math.max(joinedTasks.length * HEIGHT, lauchedTasks.length * HEIGHT)
-    this.setData({
-      "tabs[0].content":joinedTasks,
-      "tabs[1].content":lauchedTasks,
-      swiperHeight: height,
-    })
+    var userId= app.globalData.openId
+    var that=this
+    requests.getJoinedProjects(userId)
+    .then(
+      data=>{
+        console.log(data)
+        that.setData({
+          "tabs[0].content": data,
+        })
+      }
+    ).then(
+      data=>{
+        requests.getLauchedProjects(userId)
+        .then(
+          data => {
+            console.log(data)
+            that.setData({
+              "tabs[1].content": data,
+            })
+            var height = Math.max(that.data.tabs[0].content.length * HEIGHT, that.data.tabs[1].content.length * HEIGHT)
+            that.setData({
+              swiperHeight: height,
+            })
+          }
+        )
+      }
+    )
   }
 })

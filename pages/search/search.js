@@ -10,26 +10,19 @@ Page({
     var id = e.currentTarget.id
     console.log(e)
     wx.navigateTo({
-      url: "/pages/detail/detail?id=" + id,
+      url: "/pages/detail/detail?projectId=" + id,
     })
   },
   onShow: function(){
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
-        requests.getUserId(res.code)
+    var that=this
+    requests.getAllProjects().then(
+      data=>{
+        console.log(1)
+        console.log(data)
+        that.setData({
+          projects: data
+        })
       }
-    })
-    var projects=[]
-    projects = requests.getAllProjects()
-    // while (projects == undefined){
-    //   console.log(projects)
-    // }
-    console.log(1)
-    console.log(projects)
-    this.setData({
-      projects:projects
-    })
+    )
   }
 })
