@@ -7,10 +7,10 @@ Page({
     projects: [],
   },
   viewDetail: function (e) {
-    var id = e.currentTarget.id
-    console.log(e)
+    var projectId = e.currentTarget.dataset.projectid
+    console.log(projectId)
     wx.navigateTo({
-      url: "/pages/detail/detail?projectId=" + id,
+      url: "/pages/detail/detail?projectId=" + projectId,
     })
   },
   onShow: function(){

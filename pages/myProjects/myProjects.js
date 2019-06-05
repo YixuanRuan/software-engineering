@@ -19,10 +19,10 @@ Page({
     ],
   },
   manageProject: function (e) {
-    var projectId = e.currentTarget.id
-    console.log(e)
+    var projectId = e.currentTarget.dataset.projectid
+    console.log(projectId)
     wx.navigateTo({
-      url: "/pages/myProjects/manageProject/manageProject?id=" + id,
+      url: "/pages/myProjects/manageProject/manageProject?projectId=" + projectId,
     })
   },
   onChange(e) {

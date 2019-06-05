@@ -1,7 +1,7 @@
 /* pages/myProjects/manageProject/manageProject.wxss */
 .scroll-x{
     padding-left: 30rpx;
-    height:80px;
+    height:60px;
     white-space:nowrap;
     display:flex;
 }
@@ -26,8 +26,8 @@
     font-size:12px;
     font-color:#222;
     background:#80CBC4;
-    margin-left: 30rpx;
-    margin-top:30rpx;
+    margin-top:10rpx;
+    margin-right:30rpx;
 }
 
 .page{
