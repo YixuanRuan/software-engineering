@@ -14,11 +14,14 @@ App({
         console.log(res)
         requests.getUserId(res.code).then(
           data => {
-            this.globalData.openId = data
+            this.globalData.openId = data.id
             console.log("用户id是")
             console.log(this.globalData.openId)
           }
         )
+      },
+      fail:res=>{
+        console.log(res)
       }
     })
   },

@@ -27,6 +27,22 @@ Page({
     })
   },
 
+  finishProject: function(){
+    var projectId = this.data.project.projectId
+    requests.finishProject(app.globalData.openId, projectId).then(
+      data=>{
+        wx.showToast({
+          title: '成功完成项目！'
+        })
+        setTimeout(function () {
+          wx.navigateBack({
+            delta: 1
+          });
+        }, 700)
+      }
+    )
+  },
+
   quitProject: function(){
     var projectId=this.data.project.projectId
     wx.showModal({

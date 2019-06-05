@@ -65,6 +65,8 @@
   
     <button wx:if="{{project.isJoined}}" class="weui-btn" type="primary" bindtap="createSubproject">创建子项目</button>
 
+    <button wx:if="{{project.isJoined}}" class=" btn-area weui-btn" type="primary" bindtap="finishProject">完成项目</button>
+
     <button wx:if="{{project.isJoined}}" class=" btn-area weui-btn" type="warn" bindtap="quitProject">退出项目</button>
 
     <button wx:if="{{project.isLaucher}}" class="btn-area weui-btn" type="primary" bindtap="alterProject">修改项目</button>

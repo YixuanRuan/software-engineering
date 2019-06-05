@@ -13,7 +13,8 @@ Page({
 
     // personalInfo dic
     projectInfo: {
-      parentProjectId:"",
+      projectId:0,
+      parentProjectId:0,
       creatorId:"345",
       projectContent:"",
       pjRequirement:"",
