@@ -1,7 +1,7 @@
 /* pages/myProjects/manageProject/manageProject.wxss */
 .scroll-x{
     padding-left: 30rpx;
-    height:60px;
+    height:80px;
     white-space:nowrap;
     display:flex;
 }
@@ -26,7 +26,7 @@
     font-size:12px;
     font-color:#222;
     background:#80CBC4;
-    margin-top:10rpx;
+    margin-top:30rpx;
     margin-right:30rpx;
 }
 
@@ -130,7 +130,11 @@ color:#d9d9d9;
   color: white;
 }
 
-
+.weui-btn-finish{
+  background-color:#92de9c;
+  width: 94%;
+  color: white;
+}
 
 
 

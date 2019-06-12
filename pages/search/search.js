@@ -7,19 +7,22 @@ Page({
     projects: [],
   },
   viewDetail: function (e) {
-    var projectId = e.currentTarget.dataset.projectid
+    var id = e.currentTarget.id
+    console.log(e)
     wx.navigateTo({
-      url: "/pages/detail/detail?projectId=" + projectId,
+      url: "/pages/detail/detail?id=" + id,
     })
   },
   onShow: function(){
-    var that=this
-    requests.getAllProjects().then(
-      data=>{
-        that.setData({
-          projects: data
-        })
-      }
-    )
+    var projects = []
+    projects = requests.getAllProjects()
+    // while (projects == undefined){
+    //   console.log(projects)
+    // }
+    console.log(1)
+    console.log(projects)
+    this.setData({
+      projects:projects
+    })
   }
 })

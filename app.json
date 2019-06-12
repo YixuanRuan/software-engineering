@@ -1,19 +1,23 @@
 {
   "pages": [
     "pages/search/search",
+    "pages/addProject/addProject",
+    "pages/detail/detail",
+    "pages/myProjects/manageProject/manageProject",
+    
     "pages/test/test",
     "pages/self-info/self-info",
     
-    "pages/myProjects/manageProject/manageProject",
+    
     "pages/edit-info/edit-info",
     
     "pages/show-info/show-info",
     "pages/score/score",
     "pages/myProjects/myProjects",
     
-    "pages/myProjects/alterProject/alterProject",
-    "pages/detail/detail",
-    "pages/addProject/addProject"
+    "pages/myProjects/alterProject/alterProject"
+    
+    
     
   ],
   "window": {
