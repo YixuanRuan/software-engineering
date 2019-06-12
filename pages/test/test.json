@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Input",
+  "usingComponents": {
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-input": "../../dist/input/index",
+    "search-card": "../../component/Search-Card/search-card"
+  }
+}

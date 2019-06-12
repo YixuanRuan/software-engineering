@@ -1,3 +1,47 @@
+<wux-popup position="right" visible="{{ visible1 }}" bind:close="onClose">
+    <wux-cell-group>
+      `<view class='notice-title-wrap'>
+          <wux-cell hover-class="none" >
+            <text class='notice-title' space='emsp'> {{noticeTitle}} </text>
+          </wux-cell>
+        </view>
+        <view class='notice-text-wrap'>
+          <wux-cell hover-class="none">
+            <text class='notice-text' space='emsp'>  {{noticeContent}} \n\n\n</text>
+            <text space='emsp'>         通知时间：{{noticeTime}}</text>
+          </wux-cell>
+        </view>
+        <wux-cell hover-class="none">
+            <wux-button block type="balanced" bindtap="close">Yes</wux-button>
+        </wux-cell>
+    </wux-cell-group>
+</wux-popup>
+
+<wux-popup position="right" visible="{{ visible2 }}" bind:close="onClose">
+    <wux-cell-group>
+      `<view class='notice-title-wrap'>
+          <wux-cell hover-class="none" >
+            <text class='notice-title' space='emsp'> {{noticeTitle2}} </text>
+          </wux-cell>
+        </view>
+        <view class='notice-text-wrap'>
+          <wux-cell hover-class="none">
+            <text class='notice-text' space='emsp'>  {{noticeContent2}} \n\n</text>
+            <navigator url="../show-info/show-info">
+              <text class='notice-name' space='emsp'> {{applyUserName}}</text>
+            </navigator>
+            <text class='notice-text' space='emsp'>\n\n\n</text>
+            <text space='emsp'>         通知时间：{{noticeTime2}}</text>
+            
+            
+          </wux-cell>
+        </view>
+        <wux-cell hover-class="none">
+            <wux-button block type="balanced" bindtap="close">Yes</wux-button>
+        </wux-cell>
+    </wux-cell-group>
+</wux-popup>
+
 <view class="container">
   <image src="../../resources/avatar.jpg" class="avatar">
   </image>
@@ -11,10 +55,12 @@
     </view>
     </navigator>
     <wux-divider text="通知中心" />
-    <project-notice/>
-    <project-notice noticeTitle = '项目删除通知' noticeContent = 'XX 项目已被删除'/>
-    <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员退出'/>
-    <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员加入'/>
+    <view bind:tap="open">
+      <project-notice count='{{count}}'/>
+    </view>
+    <project-notice noticeTitle = '项目删除通知' noticeContent = 'XX 项目已被删除' />
+    <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员退出' bind:click="open"/>
+    <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员加入' bind:click="open"/>
     <view class='footer'>
       <view class='footer-item'>
         <image src="../../resources/email.png" class="footer-icon"></image>
@@ -24,3 +70,4 @@
     </view>
   </view>
 </view>
+<movable-button />

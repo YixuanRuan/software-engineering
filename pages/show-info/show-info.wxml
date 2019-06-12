@@ -1,0 +1,42 @@
+<view class="container">
+  <image src="../../resources/avatar.jpg" class="avatar">
+  </image>
+  <text class='info-name'>{{name}}</text>
+  <text class='info-email'>{{email}}</text>
+  <wux-wing-blank size="default" class='info-card'>
+  <wux-card bordered="{{ false }}" title="个人信息">
+      <view slot="body" class='info-content'>
+        <wux-row>
+            <wux-col span="4">
+                <text class='info-title'>信用分：</text>
+            </wux-col>
+            <wux-col span="7.9">
+                <text>{{credit}}</text>
+            </wux-col>
+            <wux-col span="0.1"></wux-col>
+        </wux-row>
+        <view class='info-row'></view>
+        <wux-row>
+            <wux-col span="4">
+                <text class='info-title'>个人优势：</text>
+            </wux-col>
+            <wux-col span="7.9">
+                <text>{{advantage}}</text>
+            </wux-col>
+            <wux-col span="0.1"></wux-col>
+        </wux-row>
+        <view class='info-row'></view>
+        <wux-row>
+            <wux-col span="4">
+                <text class='info-title'>个人简介：</text>
+            </wux-col>
+            <wux-col span="7.9">
+                <text>{{introduction}}</text>
+            </wux-col>
+            <wux-col span="0.1"></wux-col>
+        </wux-row>
+        <view class='info-row'></view>
+      </view>
+  </wux-card>
+</wux-wing-blank>
+</view>

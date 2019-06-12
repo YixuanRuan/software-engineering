@@ -1,66 +1,31 @@
-// pages/self-info/self-info.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    
+    visible1: false,
+    visible2: false,
+    noticeTitle: '项目进度通知',
+    noticeTitle2: '项目申请通知',
+    noticeTime: '2019.5.21',
+    noticeTime2: '2019.5.20',
+    noticeContent: '\n 您已经成功加入项目 XX \n\n 项目的结束时间为：2019.7.21 \n\n 你负责的任务是：前端开发\n\n 请尽快与项目负责人沟通!',
+    noticeContent2: '\n 用户 XX 申请加入项目 XX \n\n 用户申请时间为：2019.7.21 \n\n 你可以点击下方查看用户信息',
+    applyUserName: 'jxf',
+    count: 1,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  open() {
+    this.setData({
+      visible2: true,
+      count: 0
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  close() {
+    this.setData({
+      visible2: false,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onClose() {
+    console.log('onClose')
+    this.setData({
+      visible2: false,
+    })
   }
 })

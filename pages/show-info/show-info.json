@@ -9,6 +9,10 @@
     "project-notice": "../../component/Notice/project-notice",
     "wux-cell-group": "../../dist/cell-group/index",
     "wux-cell": "../../dist/cell/index",
+    "wux-row": "../../dist/row/index",
+    "wux-col": "../../dist/col/index",
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
     "wux-button": "../../dist/button/index",
     "wux-popup": "../../dist/popup/index"
   }

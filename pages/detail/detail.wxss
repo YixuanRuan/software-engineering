@@ -78,10 +78,15 @@ color:#d9d9d9;
 }
 
 .btn-area{
-  margin-top: 5rpx;
+  margin-top: 10px;
+  text-align: center;
 }
 
-
+.weui-btn{
+  background-color: #92de9c;
+  width: 94%;
+  color: white;
+}
 
 
 

@@ -6,3 +6,7 @@
 .back-icon{
   float:left; 
 }
+
+.page{
+  margin-top:-25px;
+}

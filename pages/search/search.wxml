@@ -1,7 +1,7 @@
 <view class="page">
   <wux-search-bar clear maxlength="8" />
   <block wx:for="{{projects}}" wx:key="projectId">
-    <project-card projectId="{{item.projectId}}" projectName='{{item.projectContent}}' startTime="{{item.startDate}}" endTime="{{item.endDate}}" remainingDay='5' personNum = '2' bindtap='viewDetail'/>
+    <search-card projectId="{{item.projectId}}" projectName='{{item.projectContent}}' startTime="{{item.startDate}}" endTime="{{item.endDate}}" remainingDay='5' personNum = '2' bindtap='viewDetail'/>
     </block>
     <view class='card-space'></view>
 </view>

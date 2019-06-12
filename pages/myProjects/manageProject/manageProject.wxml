@@ -56,19 +56,18 @@
     </view>
   </view>
   
-  <view wx:if="{{project.isJoined}}" class="btn-area">
-    <button class="weui-btn" type="primary" bindtap="createSubproject">创建子项目</button>
-  </view>
-
-  <view wx:if="{{project.isJoined}}" class="btn-area">
-    <button class="weui-btn" type="warn" bindtap="quitProject">退出项目</button>
+    <view class="btn-area-top">
+      <button wx:if="{{project.isJoined}}" class="weui-btn" size="mini" bindtap="createSubproject">创建子项目</button>
+      <button wx:if="{{project.isJoined}}" class="weui-btn" size="mini" bindtap="quitProject">退出项目</button>
+      <button wx:if="{{project.isLaucher}}" class="weui-btn" size="mini" bindtap="alterProject">修改项目</button>
+    </view>
+    
+  <view  class="btn-area-bottom">
+    
+    <button wx:if="{{project.isLaucher}}" class="weui-btn-delete" size="mini" bindtap="deleteProject">删除整个项目</button>
   </view>
 
   <view wx:if="{{project.isLaucher}}" class="btn-area">
-    <button class="weui-btn" type="primary" bindtap="alterProject">修改项目</button>
-  </view>
-
-  <view wx:if="{{project.isLaucher}}" class="btn-area">
-    <button class="weui-btn" type="warn" bindtap="deleteProject">删除整个项目</button>
+    
   </view>
 </view>

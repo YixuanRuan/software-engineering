@@ -38,3 +38,14 @@ page{
   border-radius: 20rpx;
   background: #EDEDED;
 }
+
+.btn-area{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.weui-btn{
+  background-color: #92de9c;
+  width: 94%;
+  color: white;
+}

@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "navigationBarTitleText": "树协作",
+  "navigationBarBackgroundColor": "#2A94EE",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-row": "../../dist/row/index",
+    "wux-col": "../../dist/col/index",
+    "wux-icon": "../../dist/icon/index"
+  }
+}
