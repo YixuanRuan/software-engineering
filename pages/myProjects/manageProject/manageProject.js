@@ -10,30 +10,93 @@ Page({
   data: {
     project:{
     },
-    subProjects:[
-    ]
   },
 
-  goToProject: function(){
+  goToSubProject: function(e){
     if (this.data.project.isJoined){
-      var id = 2
+      console.log(e)
       wx.navigateTo({
-        url: "/pages/myProjects/manageProject/manageProject?id=" + id,
-        // url: "/pages/myProjects/alterProject/alterProject?id=" + id,
-        // url: "/pages/detail/detail?id=" + id,
-        // url: "/pages/addProject/addProject",
+        url: "/pages/myProjects/manageProject/manageProject?projectId=" + e.currentTarget.dataset.subprojectid,
       })
-    }else{
-      console.log("fuck")
     }
   },
 
   createSubproject: function () {
     wx.navigateTo({
       url: "/pages/addProject/addProject?parentProjectId=" + this.data.project.parentProject,
-      // url: "/pages/myProjects/alterProject/alterProject?id=" + id,
-      // url: "/pages/detail/detail?id=" + id,
-      // url: "/pages/addProject/addProject",
+    })
+  },
+
+  finishProject: function(){
+    var projectId = this.data.project.projectId
+    requests.finishProject(app.globalData.openId, projectId).then(
+      data=>{
+        wx.showToast({
+          title: '成功完成项目！'
+        })
+        setTimeout(function () {
+          wx.navigateBack({
+            delta: 1
+          });
+        }, 700)
+      }
+    )
+  },
+
+  quitProject: function(){
+    var projectId=this.data.project.projectId
+    wx.showModal({
+      title: '退出项目',
+      content: '是否确定退出项目？',
+      confirmText: "确认",
+      cancelText: "返回",
+      success: function(res){
+        console.log(res)
+        if(res.confirm){
+          console.log("shit")
+          requests.quitProject(app.globalData.openId,projectId).then(
+            data=>{
+              console.log(data)
+              wx.navigateBack({
+                delta:1
+              })
+            }
+          )
+        }else{
+        }
+      }
+    })
+  },
+
+  alterProject: function(){
+    var projectId=this.data.project.projectId
+    wx.navigateTo({
+      url: "/pages/myProjects/alterProject/alterProject?projectId=" + projectId,
+    })
+  },
+
+  deleteProject: function () {
+    var projectId = this.data.project.projectId
+    wx.showModal({
+      title: '删除项目',
+      content: '是否确定删除项目？',
+      confirmText: "确认",
+      cancelText: "返回",
+      success: function (res) {
+        console.log(res)
+        if (res.confirm) {
+          console.log("shit")
+          requests.deleteProject(app.globalData.openId, projectId).then(
+            data => {
+              console.log(data)
+              wx.navigateBack({
+                delta: 1
+              })
+            }
+          )
+        } else {
+        }
+      }
     })
   },
 
@@ -41,68 +104,26 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var args = { userId: app.globalData.openId, projectId: options.id}
-    var a=requests.getProjectByProjectIdAndUserId(args);
-    console.log(a)
-    this.setData({
-      project:a
-    })
+    console.log(options)
+    requests.getProjectByProjectIdAndUserId(app.globalData.openId, options.projectId).then(
+      data=>{
+        console.log(data)
+        this.setData({
+          project: data
+        })
+      }
+    )
   },
 
-  getProjectInfo: function(){
-
+  onShow: function (options) {
+    var projectId=this.data.project.projectId
+    requests.getProjectByProjectIdAndUserId(app.globalData.openId, projectId).then(
+      data => {
+        console.log(data)
+        this.setData({
+          project: data
+        })
+      }
+    )
   },
-
-  join: function(){
-
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })

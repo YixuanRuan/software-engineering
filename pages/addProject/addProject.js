@@ -13,7 +13,8 @@ Page({
 
     // personalInfo dic
     projectInfo: {
-      parentProjectId:"",
+      projectId:0,
+      parentProjectId:0,
       creatorId:"345",
       projectContent:"",
       pjRequirement:"",
@@ -133,62 +134,17 @@ Page({
               'projectInfo.people': parseInt(data.people),
             });
             console.log(that.data.projectInfo)
-            requests.submitProjectInfo(that.data.projectInfo)
+            requests.submitProjectInfo(that.data.projectInfo).then(
+              data=>{
+                console.log(data)
+              }
+            )
           } else {
             console.log('用户点击返回操作')
           }
         }
       });
     }
-  },
-
-
-
-  // MARK: - 未用到的生命周期函数
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  onReady: function () {
-
   },
 })
 
