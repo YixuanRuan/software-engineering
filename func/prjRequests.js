@@ -1,84 +1,83 @@
+const app=getApp()
 
 function getProjectByProjectIdAndUserId(userId,projectId){
   return new Promise((resolve, reject) => {
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/groundTasks', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userId:userId,
-    //     projectId:projectId
-    //   },
-    //   method: "GET",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     resolve(res.data)
-    //   }
-    // })
-    resolve(project);
+    wx.request({
+      url: 'http://114.115.151.96:8080/task/isMyCreateTask', //仅为示例，并非真实的接口地址
+      data: {
+        userId:userId,
+        taskId:projectId
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
   })
 }
 
 // 获取所有项目
-function getAllProjects() {
+function getAllProjects(userId) {
   return new Promise((resolve, reject) => {
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/groundTasks', //仅为示例，并非真实的接口地址
-    //   data: {
-    //   },
-    //   method: "GET",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     return res.data
-    //   }
-    // })
-    resolve(projects);
+    wx.request({
+      url: 'http://114.115.151.96:8080/task/noRelationTask', //仅为示例，并非真实的接口地址
+      data: {
+        userid:userId
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
+    // resolve(projects)
   })
 }
 
 // 获取参加的项目
 function getJoinedProjects(userId) {
   return new Promise((resolve, reject) => { 
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/groundTasks', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userId:userId,
-    //   },
-    //   method: "GET",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     return res.data
-    //   }
-    // })
-    resolve(joinedProjects);
+    wx.request({
+      url: 'http://114.115.151.96:8080/task/userJoinTasks', //仅为示例，并非真实的接口地址
+      data: {
+        userid:userId,
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
   })
 }
 
 // 获取创建的项目
 function getLauchedProjects(userId) {
   return new Promise((resolve, reject) =>  { 
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/groundTasks', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userId:userId,
-    //   },
-    //   method: "GET",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     resolve(res.data)
-    //   }
-    // })
-    resolve(lauchedProjects);
+    wx.request({
+      url: 'http://114.115.151.96:8080/task/userCreateTasks', //仅为示例，并非真实的接口地址
+      data: {
+        userid:userId,
+      },
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
   })
 }
 
@@ -113,13 +112,12 @@ function submitProjectInfo(projectInfo){
 
 // 加入项目
 function joinProject(userId,projectId) {
-  console.log(userId)
   return new Promise((resolve, reject) =>  {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/save', //仅为示例，并非真实的接口地址
+      url: 'http://114.115.151.96:8080/join/userJoinTasks', //仅为示例，并非真实的接口地址
       data: {
-        userId: 12,
-        taskId: 2,
+        userid: userId,
+        taskid: projectId,
       },
       method: "GET",
       header: {
@@ -136,66 +134,66 @@ function joinProject(userId,projectId) {
 // 完成项目
 function finishProject(userId, projectId) {
   return new Promise((resolve, reject) => {
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/save', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userId: userId,
-    //     projectId: projectId,
-    //   },
-    //   method: "POST",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     resolve(res.data)
-    //   }
-    // })
-    resolve("Project Finished!")
+    wx.request({
+      url: 'http://114.115.151.96:8080/join/setFinish', //仅为示例，并非真实的接口地址
+      data: {
+        projectId: projectId,
+        userId: userId
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
+    // resolve("Project Finished!")
   })
 }
 
 // 退出项目
 function quitProject(userId, projectId) {
   return new Promise((resolve, reject) =>  { 
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/save', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userId: userId,
-    //     projectId: projectId,
-    //   },
-    //   method: "POST",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     resolve(res.data)
-    //   }
-    // })
-    resolve("quit success!")
+    wx.request({
+      url: 'http://114.115.151.96:8080/join/delete', //仅为示例，并非真实的接口地址
+      data: {
+        userId: userId,
+        projectId: projectId,
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
+    // resolve("quit success!")
   })
 }
 
 // 删除项目
 function deleteProject(userId, projectId) {
   return new Promise((resolve, reject) => {
-    // wx.request({
-    //   url: 'http://114.115.151.96:8080/task/save', //仅为示例，并非真实的接口地址
-    //   data: {
-    //     userId: userId,
-    //     projectId: projectId,
-    //   },
-    //   method: "POST",
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success(res) {
-    //     console.log(res.data)
-    //     resolve(res.data)
-    //   }
-    // })
-    resolve("delete success!")
+    wx.request({
+      url: 'http://114.115.151.96:8080/task/delete', //仅为示例，并非真实的接口地址
+      data: {
+        userId: userId,
+        projectId: projectId,
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        resolve(res.data)
+      }
+    })
+    // resolve("delete success!")
   })
 }
 
@@ -228,7 +226,7 @@ module.exports={
   finishProject: finishProject,
   quitProject : quitProject,
   deleteProject : deleteProject,
-  getUserId : getUserId
+  getUserId : getUserId,
 }
   
 

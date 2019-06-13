@@ -3,7 +3,7 @@ const app = getApp()
 const HEIGHT = 450
 Page({
   data: {
-    swiperHeight:100,
+    swiperHeight:0,
     current: 'tab1',
     tabs: [
       {
@@ -76,7 +76,8 @@ Page({
             that.setData({
               "tabs[1].content": data,
             })
-            var height = Math.max(that.data.tabs[0].content.length * HEIGHT, that.data.tabs[1].content.length * HEIGHT)
+            var height = that.data.tabs[0].content.length * HEIGHT
+            // Math.max(that.data.tabs[0].content.length * HEIGHT, that.data.tabs[1].content.length * HEIGHT)
             that.setData({
               swiperHeight: height,
             })

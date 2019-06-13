@@ -14,11 +14,16 @@ Page({
   },
   onShow: function(){
     var that=this
-    requests.getAllProjects().then(
+    app.getOpenId().then(
       data=>{
-        that.setData({
-          projects: data
-        })
+        console.log(data)
+        requests.getAllProjects(data).then(
+          data => {
+            that.setData({
+              projects: data
+            })
+          }
+        )
       }
     )
   }

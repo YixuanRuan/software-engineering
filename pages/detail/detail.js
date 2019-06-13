@@ -15,7 +15,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var projectId = options.projectId;
     this.setData({
       projectId: options.projectId,
     })
