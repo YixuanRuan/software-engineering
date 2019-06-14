@@ -23,7 +23,7 @@ Page({
     console.log(e.currentTarget.dataset)
     console.log(taskId)
     wx.navigateTo({
-      url: "/pages/myProjects/manageProject/manageProject?projectId=" + taskId,
+      url: "/pages/myProjects/manageProject/manageProject?projectId=" + taskId + "&layer=1",
     })
   },
   onChange(e) {

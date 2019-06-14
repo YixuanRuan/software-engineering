@@ -8,6 +8,7 @@ Page({
    * Page initial data
    */
   data: {
+    layer:1,
     isJoined:false,
     isLaucher:false,
     subtask:[],
@@ -17,10 +18,10 @@ Page({
   },
 
   goToSubProject: function(e){
-    if (this.data.project.isJoined){
+    if (this.data.isJoined&&this.data.layer==1){
       console.log(e)
       wx.navigateTo({
-        url: "/pages/myProjects/manageProject/manageProject?projectId=" + e.currentTarget.dataset.subprojectid,
+        url: "/pages/myProjects/manageProject/manageProject?projectId=" + e.currentTarget.dataset.subprojectid + "&layer=2",
       })
     }
   },
@@ -111,6 +112,10 @@ Page({
    */
   onLoad: function (options) {
     console.log(options.projectId)
+    var num=parseInt(options.layer)
+    this.setData({
+      layer: num
+    })
     requests.getProjectByProjectIdAndUserId(app.globalData.openId, options.projectId).then(
       data=>{
         console.log(data)

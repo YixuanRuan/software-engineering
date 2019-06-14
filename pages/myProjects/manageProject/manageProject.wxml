@@ -10,7 +10,7 @@
   <view class="cells_title">子项目</view>
   <scroll-view scroll-x class="scroll-x">
     <view wx:for="{{subtask}}" wx:key="{{index}}" class="view-parent">
-      <view class="view-item" bindtap="goToSubProject" data-subProjectId="{{item.projectId}}">{{item.projectContent}}</view>
+      <view class="view-item" bindtap="goToSubProject" data-subProjectId="{{item.taskId}}">{{item.projectContent}}</view>
     </view>
   </scroll-view>
 
