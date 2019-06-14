@@ -12,15 +12,6 @@ Page({
     tips: "",
     // personalInfo dic
     projectInfo: {
-      parentProjectId: "",
-      creatorId: "345",
-      projectContent: "",
-      pjRequirement: "",
-      weight: "",
-      createTime: "2019-04-23",
-      overTime: "2019-07-23",
-      currentPeople: 0,
-      people: 0,
     }
   },
 
@@ -30,7 +21,7 @@ Page({
       data=>{
         console.log(data)
         that.setData({
-          projectInfo:data
+          projectInfo:data.project
         })
       }
     )
@@ -136,7 +127,7 @@ Page({
               'projectInfo.people': parseInt(data.people),
             });
             console.log(that.data.projectInfo)
-            requests.submitProjectInfo(that.data.projectInfo).then(
+            requests.changeProjectInfo(that.data.projectInfo).then(
               data => {
                 console.log(data)
                 wx.navigateBack({

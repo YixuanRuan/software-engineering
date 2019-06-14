@@ -19,20 +19,19 @@ Page({
     ],
   },
   manageProject: function (e) {
-    var projectId = e.currentTarget.dataset.projectid
-    console.log(projectId)
+    var taskId = e.currentTarget.dataset.projectid
+    console.log(e.currentTarget.dataset)
+    console.log(taskId)
     wx.navigateTo({
-      url: "/pages/myProjects/manageProject/manageProject?projectId=" + projectId,
+      url: "/pages/myProjects/manageProject/manageProject?projectId=" + taskId,
     })
   },
   onChange(e) {
-    console.log('onChange', e)
     this.setData({
       current: e.detail.key,
     })
   },
   onTabsChange(e) {
-    console.log('onTabsChange', e)
     const { key } = e.detail
     const index = this.data.tabs.map((n) => n.key).indexOf(key)
     this.setData({
@@ -41,7 +40,6 @@ Page({
     })
   },
   onSwiperChange(e) {
-    console.log('onSwiperChange', e)
     const { current: index, source } = e.detail
     const { key } = this.data.tabs[index]
     var id=e.detail.current
@@ -62,7 +60,6 @@ Page({
     requests.getJoinedProjects(userId)
     .then(
       data=>{
-        console.log(data)
         that.setData({
           "tabs[0].content": data,
         })
@@ -72,7 +69,6 @@ Page({
         requests.getLauchedProjects(userId)
         .then(
           data => {
-            console.log(data)
             that.setData({
               "tabs[1].content": data,
             })

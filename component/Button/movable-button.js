@@ -46,7 +46,6 @@ Page({
     }
   },
   onChange(e) {
-    console.log('onChange', e)
   },
   pickerChange(e) {
     const { value } = e.detail

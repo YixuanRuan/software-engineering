@@ -7,8 +7,12 @@ Page({
    * Page initial data
    */
   data: {
-    projectId:0,
-    project:{}
+    projectId: 0,
+    isJoined: false,
+    isLaucher: false,
+    subtask: [],
+    project: {},
+    laucher:{}
   },
 
   /**
@@ -19,10 +23,15 @@ Page({
       projectId: options.projectId,
     })
     var that=this
-    requests.getProjectByProjectIdAndUserId(app.globalData.openId, projectId).then(
+    requests.getProjectByProjectIdAndUserId(app.globalData.openId, options.projectId).then(
       data=>{
+        console.log(data)
         that.setData({
-          project:data
+          isJoined: data.isJoined,
+          isLaucher: data.isLaucher,
+          project: data.project,
+          subtask: data.subtask,
+          laucher: data.laucher
         })
       }
     )

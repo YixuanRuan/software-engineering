@@ -8,6 +8,7 @@ Page({
   },
   viewDetail: function (e) {
     var projectId = e.currentTarget.dataset.projectid
+    console.log(e.currentTarget.dataset)
     wx.navigateTo({
       url: "/pages/detail/detail?projectId=" + projectId,
     })
@@ -16,9 +17,9 @@ Page({
     var that=this
     app.getOpenId().then(
       data=>{
-        console.log(data)
         requests.getAllProjects(data).then(
           data => {
+            console.log(data)
             that.setData({
               projects: data
             })

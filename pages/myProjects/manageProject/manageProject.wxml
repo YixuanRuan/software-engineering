@@ -9,7 +9,7 @@
 
   <view class="cells_title">子项目</view>
   <scroll-view scroll-x class="scroll-x">
-    <view wx:for="{{project.subProjects}}" wx:key="{{index}}" class="view-parent">
+    <view wx:for="{{subtask}}" wx:key="{{index}}" class="view-parent">
       <view class="view-item" bindtap="goToSubProject" data-subProjectId="{{item.projectId}}">{{item.projectContent}}</view>
     </view>
   </scroll-view>
@@ -41,11 +41,11 @@
   <view class="cells_body">
     <view class="cell">
       <image class="cell_img" src="/images/detail/person_333.png"></image>
-      <text class="cell_text">姓名：{{project.name}}</text>
+      <text class="cell_text">姓名：{{laucher.name}}</text>
     </view>
     <view class="cell">
       <image class="cell_img" src="/images/detail/phone_333.png"></image>
-      <text class="cell_text">电话：{{project.phone}}</text>
+      <text class="cell_text">电话：{{laucher.phone}}</text>
     </view>
   </view>
 
@@ -63,14 +63,14 @@
     </view>
   </view>
   
-    <button wx:if="{{project.isJoined}}" class="weui-btn" type="primary" bindtap="createSubproject">创建子项目</button>
+    <button wx:if="{{isJoined}}" class="weui-btn" type="primary" bindtap="createSubproject">创建子项目</button>
 
-    <button wx:if="{{project.isJoined}}" class=" btn-area weui-btn" type="primary" bindtap="finishProject">完成项目</button>
+    <button wx:if="{{isJoined}}" class=" btn-area weui-btn" type="primary" bindtap="finishProject">完成项目</button>
 
-    <button wx:if="{{project.isJoined}}" class=" btn-area weui-btn" type="warn" bindtap="quitProject">退出项目</button>
+    <button wx:if="{{isJoined}}" class=" btn-area weui-btn" type="warn" bindtap="quitProject">退出项目</button>
 
-    <button wx:if="{{project.isLaucher}}" class="btn-area weui-btn" type="primary" bindtap="alterProject">修改项目</button>
+    <button wx:if="{{isLaucher}}" class="btn-area weui-btn" type="primary" bindtap="alterProject">修改项目</button>
 
-    <button wx:if="{{project.isLaucher}}" class="btn-area weui-btn" type="warn" bindtap="deleteProject">删除整个项目</button>
+    <button wx:if="{{isLaucher}}" class="btn-area weui-btn" type="warn" bindtap="deleteProject">删除整个项目</button>
     
 </view>

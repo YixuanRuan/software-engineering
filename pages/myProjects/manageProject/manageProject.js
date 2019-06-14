@@ -8,8 +8,11 @@ Page({
    * Page initial data
    */
   data: {
-    project:{
-    },
+    isJoined:false,
+    isLaucher:false,
+    subtask:[],
+    project:{},
+    laucher:{},
   },
 
   goToSubProject: function(e){
@@ -28,7 +31,7 @@ Page({
   },
 
   finishProject: function(){
-    var projectId = this.data.project.projectId
+    var projectId = this.data.project.taskId
     requests.finishProject(app.globalData.openId, projectId).then(
       data=>{
         wx.showToast({
@@ -44,7 +47,7 @@ Page({
   },
 
   quitProject: function(){
-    var projectId=this.data.project.projectId
+    var projectId = this.data.project.taskId
     wx.showModal({
       title: '退出项目',
       content: '是否确定退出项目？',
@@ -69,14 +72,16 @@ Page({
   },
 
   alterProject: function(){
-    var projectId=this.data.project.projectId
+    var projectId = this.data.project.taskId
+    console.log("alter")
+    console.log(projectId)
     wx.navigateTo({
       url: "/pages/myProjects/alterProject/alterProject?projectId=" + projectId,
     })
   },
 
   deleteProject: function () {
-    var projectId = this.data.project.projectId
+    var projectId = this.data.project.taskId
     wx.showModal({
       title: '删除项目',
       content: '是否确定删除项目？',
@@ -104,26 +109,36 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log(options.projectId)
     requests.getProjectByProjectIdAndUserId(app.globalData.openId, options.projectId).then(
       data=>{
         console.log(data)
         this.setData({
-          project: data
+          isJoined:data.isJoined,
+          isLaucher:data.isLaucher,
+          project: data.project,
+          subtask: data.subtask,
+          laucher: data.laucher
         })
       }
     )
   },
 
   onShow: function (options) {
-    var projectId=this.data.project.projectId
-    requests.getProjectByProjectIdAndUserId(app.globalData.openId, projectId).then(
-      data => {
-        console.log(data)
-        this.setData({
-          project: data
-        })
-      }
-    )
+    var projectId = this.data.project.taskId
+    if(projectId){
+      requests.getProjectByProjectIdAndUserId(app.globalData.openId, projectId).then(
+        data => {
+          console.log(data)
+          this.setData({
+            isJoined: data.isJoined,
+            isLaucher: data.isLaucher,
+            project: data.project,
+            subtask: data.subtask,
+            laucher: data.laucher
+          })
+        }
+      )
+    }
   },
 })
