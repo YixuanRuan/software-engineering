@@ -20,10 +20,9 @@ public class MessageService {
 	public void save(int receiveId,String title,String text,int type,int taskId,int sendId) {
 		// TODO Auto-generated method stub
 		Message message =new Message();
-		if(type==1)//申请
-			message.setSendId(sendId);
-		else if(type==2)
-			message.setSendId(sendId);
+		message.setSendId(sendId);
+		message.setType(type);
+		message.setTaskId(taskId);
 		message.setReceiveId(receiveId);
 		message.setTitle(title);
 		message.setText(text);
@@ -47,6 +46,8 @@ public class MessageService {
 	}
 	public void setRead(int id) {
 		// TODO Auto-generated method stub
-		dao.findById(id).setReadFlag(true);
+		Message m=dao.findById(id);
+		m.setReadFlag(true);
+		m.update();
 	}
 }

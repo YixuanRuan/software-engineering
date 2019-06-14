@@ -58,6 +58,14 @@ public class TaskController extends Controller {
 		setAttr("tasks",tasks);
 		renderJson();
 	}
+	//获取项目信息
+	public void getTask()
+	{
+		String taskId=getPara("taskid");
+		int taskid=Integer.parseInt(taskId);
+		setAttr("task",service.findById(taskid));
+		renderJson();
+	}
 	public void noRelationTask() {
 		String userId=getPara("userid");
 		int userid=Integer.parseInt(userId);
@@ -80,9 +88,10 @@ public class TaskController extends Controller {
 		setAttr("isLaucher",service.isMyCreateTasks(taskId,userId));
 		setAttr("project",service.findById(taskId));
 		setAttr("laucher",us.findById(ts.findById(taskId).getCreatorId()));
-		int rootId=userId;
+		int rootId=taskId;
 		List<Task> subTask=service.getSubtasks(rootId);
 		setAttr("subtask",subTask);
+		setAttr("members",us.findJoiner(taskId));
 		renderJson();
 	}
 	//加入项目 √
@@ -107,7 +116,9 @@ public class TaskController extends Controller {
 		int people = Integer.parseInt(getPara("people"));
 		
 		Task task = new Task();
-		
+	
+		if (taskid != 0)
+			task.setTaskId(taskid);
 		task.setCreatorId(creatorid);
 		task.setProjectContent(projectcontent);
 		task.setParentProjectId(parentprojectid);
@@ -128,8 +139,8 @@ public class TaskController extends Controller {
 			task.update();
 			renderJson("Success Update");
 		}
-		
 	}
+
 	// 某个用户申请加入某个项目
 	public void save() {
 		int taskId = Integer.parseInt(getPara("taskId"));
@@ -176,7 +187,7 @@ public class TaskController extends Controller {
 	 * 并要对数据进正确性进行验证，在此仅为了偷懒
 	 */
 	public void create() {
-		String json=getPara("task");
+		String json=getRawData();
 		System.out.println(json);
 		Task task= FastJson.getJson().parse(json, Task.class);
 		int userid=task.getCreatorId();
@@ -198,6 +209,7 @@ public class TaskController extends Controller {
 	public void delete() {
 		int taskId = Integer.parseInt(getPara("taskId"));
 		service.deleteById(taskId);
+		renderJson("success");
 	}
 }
 

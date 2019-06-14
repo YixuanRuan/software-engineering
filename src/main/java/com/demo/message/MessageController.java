@@ -56,7 +56,9 @@ public class MessageController extends Controller {
 	{
 		String json=getPara("messageId");
 		int id= Integer.parseInt(json);
+		
 		service.setRead(id);
+		
 		renderJson("success");
 	}
 	

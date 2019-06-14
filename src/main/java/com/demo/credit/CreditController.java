@@ -8,6 +8,8 @@ import com.jfinal.json.FastJson;
 import com.jfinal.json.Jackson;
 import com.jfinal.kit.HttpKit;
 import com.jfinal.kit.JsonKit;
+import net.sf.json.JSONArray;
+import java.util.Iterator;
 import com.demo.common.model.*;
 
 /**
@@ -18,17 +20,26 @@ public class CreditController extends Controller {
 	
 	@Inject
 	CreditService service;
-	@NotAction
+	
 	public  User getUserJson()
 	{
 		String json=getPara("User");
-		return FastJson.getJson().parse(json, User.class);	
+		return FastJson.getJson().parse(json, User.class);
+		
 	}
-	void addPaise()
+	public void getJudge()
+	{
+		String json=getRawData();
+		Judge j= FastJson.getJson().parse(json, Judge.class);
+		
+       renderJson();
+	}
+	public void addPaise()
 	{
 		User user= getUserJson();
 		Credit credit=service.findByUserId(user.getUserId());
 		credit.setPraise(credit.getPraise()+1);
+		renderJson();
 	}
 	void addBad()
 	{

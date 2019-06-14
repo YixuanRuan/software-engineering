@@ -1,5 +1,6 @@
 package com.demo.user;
 import java.util.Date;
+import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.demo.common.model.*;
@@ -20,7 +21,11 @@ private User dao = new User().dao();
 		dao.deleteById(id);
 	}
 
-
+	public List<User> findJoiner(int taskId) {
+		// TODO Auto-generated method stub
+		
+		return dao.find("select u.* from joins j ,user u  where j.taskId=? and j.userId=u.userId",taskId);
+	}
 	public User findUserByOpenid(String openid) {
 		// TODO Auto-generated method stub
 		return dao.findFirst("select * from user where wechatId=?", openid);

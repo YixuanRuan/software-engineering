@@ -23,7 +23,13 @@ public class UserController extends Controller {
 	public void add() {
 		render("add.html");
 	}
-	
+	public void findJoiner()
+	{
+		int taskId=Integer.parseInt(getPara("taskId"));
+		System.out.println(service.findJoiner(taskId));
+		set("joiner",service.findJoiner(taskId));
+		renderJson();
+	}
 	/**
 	 * save 与 update 的业务逻辑在实际应用中也应该放在 serivce 之中，
 	 * 并要对数据进正确性进行验证，在此仅为了偷懒

@@ -43,6 +43,17 @@ public class JoinController extends Controller {
     	User user=us.findById(userid);
     	TaskService ts=new TaskService();
     	Task task = ts.findById(taskid);
+    	if(service.isJoinTheTask(taskid,userid)==true)
+    	{
+    		renderJson("用户已加入该项目");
+    		return;
+    	}
+    	if(task.getCurrentPeople()+1>task.getPeople())
+    	{
+    		renderJson("人数过多");
+    		return;
+    	}
+    	task.setCurrentPeople(task.getCurrentPeople()+1);
     	int rootid=task.getCreatorId();
     	if(service.joinTaskBytaskid(taskid, userid)==true)
     	{
@@ -50,10 +61,18 @@ public class JoinController extends Controller {
     		String text="user: "+user.getName()+" "+" 加入了任务: "+task.getProjectContent();
     		System.out.println(text);
     		mservice.save(rootid, "新的加入",text,1,taskid,userid);
+    		task.update();
     	}
     	renderJson();
     	
 	}
+    public void getJoin()
+    {
+    	int taskId = Integer.parseInt(getPara("taskId"));
+    	List<Joins> list=service.findByTaskId(taskId);
+    	set("joiner",list);
+    	renderJson();
+    }
     public void setFinish()
     {
     	int taskId = Integer.parseInt(getPara("taskId"));

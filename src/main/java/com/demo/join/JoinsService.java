@@ -16,6 +16,7 @@ private Joins dao = new Joins().dao();
 	}
 	public void deletejoinByUserId(int userId)
 	{
+		
 		List<Joins> p=dao.find("select * from joins where userId=?",userId);
 		for(Joins it :p)
 			it.delete();
@@ -38,6 +39,7 @@ private Joins dao = new Joins().dao();
 		join.setUserId(userid);
 		return join.save();
 	}
+	
 	public boolean isJoinTheTask(int taskid,int userid) {
 		Joins join=dao.findFirst("select * from joins where userId=? and taskId=?",userid,taskid);
 		return join!=null;
@@ -48,6 +50,7 @@ private Joins dao = new Joins().dao();
 
 	public Joins findById(int userId, int taskId) {
 		// TODO Auto-generated method stub
+		
 	return dao.findFirst("select * from joins where userId=? and taskId=?",userId,taskId);
 	}
 
@@ -61,6 +64,10 @@ private Joins dao = new Joins().dao();
 		// TODO Auto-generated method stub
 		join.delete();
 	}
-
+	public List<Joins> findByTaskId(int taskId) {
+		// TODO Auto-generated method stub
+		return dao.find("select * from joins ,user  where joins.taskId=? and joins.userId=user.userId",taskId);
+	}
+	
 
 }

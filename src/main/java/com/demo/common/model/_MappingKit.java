@@ -19,6 +19,7 @@ public class _MappingKit {
 		arp.addMapping("collection", "collectionId", Collection.class);
 		arp.addMapping("credit", "creditId", Credit.class);
 		arp.addMapping("joins", "joinId", Joins.class);
+		arp.addMapping("judge", "judgeid", Judge.class);
 		arp.addMapping("message", "messageId", Message.class);
 		arp.addMapping("project", "projectId", Project.class);
 		arp.addMapping("task", "taskId", Task.class);

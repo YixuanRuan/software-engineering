@@ -31,4 +31,13 @@ public Credit findByUserId(int UserId)
 	//UserId=CreditId
 	return dao.findById(UserId);
 }
+public void add(judgeTable it) {
+	// TODO Auto-generated method stub
+	Credit credit=dao.findById(it.userId);
+	if(it.isfinish==true)
+	credit.setSuccess(credit.getSuccess()+1);
+	else 
+	credit.setFailure(credit.getFailure()+1);
+	credit.update();
+}
 }
