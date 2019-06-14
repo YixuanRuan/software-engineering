@@ -16,7 +16,7 @@
 
   <view class="cells_title">项目成员</view>
   <scroll-view scroll-x class="scroll-x">
-    <view wx:for="{{project.members}}" wx:key="{{index}}" class="view-parent">
+    <view wx:for="{{members}}" wx:key="{{index}}" class="view-parent">
       <view class="view-item">{{item.name}}</view>
     </view>
   </scroll-view>

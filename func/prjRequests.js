@@ -164,10 +164,10 @@ function finishProject(userId, projectId) {
     wx.request({
       url: 'http://114.115.151.96:8080/join/setFinish', //仅为示例，并非真实的接口地址
       data: {
-        projectId: projectId,
+        taskId: projectId,
         userId: userId
       },
-      method: "POST",
+      method: "GET",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -187,9 +187,9 @@ function quitProject(userId, projectId) {
       url: 'http://114.115.151.96:8080/join/delete', //仅为示例，并非真实的接口地址
       data: {
         userId: userId,
-        projectId: projectId,
+        taskId: projectId,
       },
-      method: "POST",
+      method: "GET",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -209,7 +209,7 @@ function deleteProject(userId, projectId) {
       url: 'http://114.115.151.96:8080/task/delete', //仅为示例，并非真实的接口地址
       data: {
         userId: userId,
-        projectId: projectId,
+        taskId: projectId,
       },
       method: "GET",
       header: {

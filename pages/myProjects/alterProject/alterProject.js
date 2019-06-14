@@ -130,9 +130,16 @@ Page({
             requests.changeProjectInfo(that.data.projectInfo).then(
               data => {
                 console.log(data)
-                wx.navigateBack({
-                  delta:1
-                })
+                if (data == "Success Update") {
+                  wx.showToast({
+                    title: '修改成功！',
+                  })
+                  setTimeout(function () {
+                    wx.navigateBack({
+                      delta: 1
+                    });
+                  }, 700)
+                }
               }
             )
           } else {

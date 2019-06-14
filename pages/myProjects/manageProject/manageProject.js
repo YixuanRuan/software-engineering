@@ -13,6 +13,7 @@ Page({
     subtask:[],
     project:{},
     laucher:{},
+    members:{}
   },
 
   goToSubProject: function(e){
@@ -26,7 +27,7 @@ Page({
 
   createSubproject: function () {
     wx.navigateTo({
-      url: "/pages/addProject/addProject?parentProjectId=" + this.data.project.parentProject,
+      url: "/pages/addProject/addProject?parentProjectId=" + this.data.project.taskId,
     })
   },
 
@@ -118,7 +119,8 @@ Page({
           isLaucher:data.isLaucher,
           project: data.project,
           subtask: data.subtask,
-          laucher: data.laucher
+          laucher: data.laucher,
+          members: data.members
         })
       }
     )
@@ -135,7 +137,8 @@ Page({
             isLaucher: data.isLaucher,
             project: data.project,
             subtask: data.subtask,
-            laucher: data.laucher
+            laucher: data.laucher,
+            members: data.members
           })
         }
       )
