@@ -10,7 +10,7 @@
           </wux-col>
           <wux-col span="8">
               <text space='ensp' class='user-info user-name'>用户 ID：  {{userID}}\n</text>
-              <text space='ensp' class='user-info user-task'>负责任务： {{userTask}}\n</text>
+              <text space='ensp' class='user-info user-task'>用户名称： {{userTask}}\n</text>
               <view bindtap="onCheckboxChange">
                 <text space='ensp' class='user-info'>是否完成： </text>
                 

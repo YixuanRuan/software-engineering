@@ -2,7 +2,7 @@
   <wux-search-bar clear maxlength="8" />
   <block wx:for="{{projects}}" wx:key="projectId">
     <search-card projectId="{{item.projectId}}" projectName='{{item.projectContent}}' startTime="{{item.startDate}}" endTime="{{item.endDate}}" remainingDay='5' personNum = '2' bindtap='viewDetail'/>
-    </block>
+  </block>
     <view class='card-space'></view>
 </view>
 <movable-button />

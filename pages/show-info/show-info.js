@@ -16,11 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that = this
+    console.log(options.userId);
     wx.request({
       url: 'http://114.115.151.96:8080/user/get',
+      
       data: {
-        id: 1
+        id: options.userId
       },
       method: 'GET',
       header: {

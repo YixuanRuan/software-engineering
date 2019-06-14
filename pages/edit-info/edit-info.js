@@ -51,7 +51,7 @@ Page({
     wx.request({
       url: 'http://114.115.151.96:8080/user/update',
       data: {
-        id: 12,
+        id: 22,
         name: that.data.name,
         tel: that.data.tel,
         advantage: that.data.advantage,

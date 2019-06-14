@@ -5,6 +5,7 @@
           修改个人信息
         </wux-cell>
     </wux-cell-group>
+
     <form bindsubmit="formSubmit">
         
           <wux-cell-group title="个人信息">

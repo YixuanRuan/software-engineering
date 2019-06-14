@@ -1,11 +1,19 @@
+<wux-toast id="wux-toast" />
 <view class='project-title'>
-  <text>软件工程大作业</text>
+  <text>{{taskName}}</text>
 </view>
 <wux-divider text="评分表" />
 
-<score-card avatarSrc = '../../resources/avatar1.jpg'/>
+<!-- <score-card avatarSrc = '../../resources/avatar1.jpg' />
 <score-card userID = '16721063' userTask = '后端开发' avatarSrc = '../../resources/avatar2.jpg'/>
 <score-card userID = '17372839' userTask = 'UI 设计' avatarSrc = '../../resources/avatar3.jpg'/>
-<score-card userID = '17373244' userTask = '美术设计' avatarSrc = '../../resources/avatar4.jpg'/>
-<wux-button block type="balanced"><wux-icon type="ios-cloud-upload" size="16" />  提交</wux-button>
+<score-card userID = '17373244' userTask = '美术设计' avatarSrc = '../../resources/avatar4.jpg'/> -->
+
+<block wx:for="{{items}}" wx:for-index="idx" wx:key="{{item.userID}}" wx:for-item="item">
+  <view bind:tap="onChange" data-checked= "{{item.checked}}" data-index = "{{idx}}">
+    <score-card userID = "{{item.userId}}" userTask = "{{item.name}}" avatarSrc = "{{avatar[idx]}}" checked = "{{!item.checked}}"/>
+  </view>
+</block>
+<wux-button block type="balanced" bind:click="showToastReturn"><wux-icon type="ios-cloud-upload" size="16" />  提交</wux-button>
+
 <movable-button />

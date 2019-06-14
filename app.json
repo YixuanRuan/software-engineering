@@ -1,24 +1,18 @@
 {
   "pages": [
+    "pages/self-info/self-info",
+    "pages/score/score",
+    "pages/test/test",
+    
+    
+    "pages/myProjects/manageProject/manageProject",
     "pages/search/search",
     "pages/addProject/addProject",
     "pages/detail/detail",
-    "pages/myProjects/manageProject/manageProject",
-    
-    "pages/test/test",
-    "pages/self-info/self-info",
-    
-    
     "pages/edit-info/edit-info",
-    
     "pages/show-info/show-info",
-    "pages/score/score",
     "pages/myProjects/myProjects",
-    
     "pages/myProjects/alterProject/alterProject"
-    
-    
-    
   ],
   "window": {
     "navigationBarTitleText": "树协作",

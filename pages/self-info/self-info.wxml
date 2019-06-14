@@ -7,7 +7,10 @@
         </view>
         <view class='notice-text-wrap'>
           <wux-cell hover-class="none">
-            <text class='notice-text' space='emsp'>  {{noticeContent}} \n\n\n</text>
+            <text class='notice-text' space='emsp'>  {{noticeContent}} \n\n</text>
+            <navigator url="../score/score?taskId={{taskId}}&taskName={{taskName}}">
+              <text class='notice-name' space='nbsp'>   {{taskName}} \n\n</text>
+            </navigator>
             <text space='emsp'>         通知时间：{{noticeTime}}</text>
           </wux-cell>
         </view>
@@ -26,8 +29,9 @@
         </view>
         <view class='notice-text-wrap'>
           <wux-cell hover-class="none">
-            <text class='notice-text' space='emsp'>  {{noticeContent2}} \n\n</text>
-            <navigator url="../show-info/show-info">
+            <text class='notice-text' space='emsp'> {{noticeContent2}} \n\n</text>
+            <text class='notice-text' space='emsp'> 你可以点击下方用户ID查看信息 \n\n</text>
+            <navigator url="../show-info/show-info?userId={{userId}}">
               <text class='notice-name' space='emsp'> {{applyUserName}}</text>
             </navigator>
             <text class='notice-text' space='emsp'>\n\n\n</text>
@@ -55,12 +59,11 @@
     </view>
     </navigator>
     <wux-divider text="通知中心" />
-    <view bind:tap="open">
-      <project-notice count='{{count}}'/>
-    </view>
-    <project-notice noticeTitle = '项目删除通知' noticeContent = 'XX 项目已被删除' />
-    <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员退出' bind:click="open"/>
-    <project-notice noticeTitle = '成员变动通知' noticeContent = 'XX 项目有成员加入' bind:click="open"/>
+    
+    <block wx:for="{{items}}" wx:key="messageId" wx:for-index="idx" wx:for-item="item">
+      <project-notice noticeTitle = "{{item.title}}" noticeContent = '{{item.text}}' count='{{count[idx+1]}}' bind:tap="open" data-messageId="{{item.messageId}}" data-notice="{{item}}" data-idx = "{{idx}}"/>
+    </block>
+    
     <view class='footer'>
       <view class='footer-item'>
         <image src="../../resources/email.png" class="footer-icon"></image>
