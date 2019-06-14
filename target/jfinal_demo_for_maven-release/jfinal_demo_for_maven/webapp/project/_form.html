@@ -1,0 +1,28 @@
+<fieldset class="solid">
+	<legend>创建Blog</legend>
+	<input type="text" name="task.projectContent" value="#(project.projectId??)" />
+	<div>
+		<label>创建时间</label>
+		<input type="date" name="task.createTime" value="#(user.name??)" />#(titleMsg)
+	</div>
+	<div>
+		<label>截止时间</label>
+		<input type="date" name="task.overTime" value="#(user.name??)" />#(titleMsg)
+	</div>
+	<div>
+		<label>创建者id</label>
+		<input type="text" name="task.creatorId" value="#(user.name??)" />#(titleMsg)
+	</div>
+	<div>
+		<label>主要内容</label>
+		<input type="text" name="task.weight" value="#(user.name??)" />#(titleMsg)
+	</div>
+	<div>
+		<label>根id</label>
+		<input type="text" name="task.parentProjectId" value="#(user.name??)" />#(titleMsg)
+	</div>
+	<div>
+		<label>&nbsp;</label>
+		<input value="提交" type="submit">
+	</div>
+</fieldset>

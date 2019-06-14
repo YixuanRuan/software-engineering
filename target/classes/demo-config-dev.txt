@@ -1,0 +1,5 @@
+# config
+jdbcUrl = jdbc:mysql://114.115.151.96/tree?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+user = root
+password =123456
+devMode = true
