@@ -21,7 +21,7 @@ Page({
     noticeContent2: '\n 用户 XX 申请加入项目 XX \n\n 用户申请时间为：2019.7.21 \n\n 你可以点击下方查看用户信息',
     applyUserName: 'jxf'
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     var that = this
     wx.request({
       url: 'http://114.115.151.96:8080/message/get',

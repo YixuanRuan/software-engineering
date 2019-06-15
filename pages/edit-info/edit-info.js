@@ -5,11 +5,11 @@ const app = getApp();
 
 Page({
   data: {
-    name: '',
-    tel:'',
-    advantage: '123456789',
-    introduction: '123456789',
-    email: 'xianfengjiao0509@gmail.com'
+    name: '请输入您的姓名',
+    tel:'请输入您的电话号码',
+    advantage: '请输入您的优势',
+    introduction: '请输入您的简介',
+    email: '请输入您的邮箱'
   },
   onLoad: function (options) {
     var that = this

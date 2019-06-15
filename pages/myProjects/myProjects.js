@@ -16,6 +16,11 @@ Page({
         title: '发起的项目',
         content: [],
       },
+      {
+        key: 'tab3',
+        title: "已完成项目",
+        content: [],
+      }
     ],
   },
   manageProject: function (e) {
@@ -72,13 +77,24 @@ Page({
             that.setData({
               "tabs[1].content": data,
             })
-            var height = that.data.tabs[0].content.length * HEIGHT
-            // Math.max(that.data.tabs[0].content.length * HEIGHT, that.data.tabs[1].content.length * HEIGHT)
-            that.setData({
-              swiperHeight: height,
-            })
           }
         )
+      }
+    ).then(
+      data => {
+        requests.getFinishedProjects(userId)
+          .then(
+            data => {
+              that.setData({
+                "tabs[2].content": data,
+              })
+              var height = that.data.tabs[0].content.length * HEIGHT
+              // Math.max(that.data.tabs[0].content.length * HEIGHT, that.data.tabs[1].content.length * HEIGHT)
+              that.setData({
+                swiperHeight: height,
+              })
+            }
+          )
       }
     )
   }
