@@ -105,6 +105,7 @@ Page({
     }
     else if(notice.type == 2){
       this.setData({
+        userId: notice.sendId,
         taskId: notice.taskId,
         noticeTitle: notice.title,
         noticeContent: notice.text,
@@ -131,10 +132,12 @@ Page({
     }
     else if (notice.type == 3){
       this.setData({
+        userId: notice.sendId,
         noticeTitle: notice.title,
         noticeContent: notice.text,
         messageId: notice.messageId,
         visible3: true,
+        [item]: 0,
       })
     }
     
