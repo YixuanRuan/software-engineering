@@ -8,7 +8,7 @@
     <block wx:for="{{ tabs }}" wx:key="key">
         <swiper-item class="swiper-item">
           <block wx:for="{{item.content}}" wx:key="projectId">
-            <project-card projectId="{{item.projectId}}" projectName='{{item.projectContent}}' startTime="{{item.startDate}}" endTime="{{item.endDate}}" remainingDay='5' personNum = '2' bindtap='manageProject' data-projectId="{{item.projectId}}"/>
+            <project-card projectId="{{item.taskId}}" projectName='{{item.projectContent}}' startTime="{{item.startDate}}" endTime="{{item.endDate}}" remainingDay='5' personNum = '2' bindtap='manageProject' data-projectId="{{item.taskId}}"/>
           </block>
           <view class='card-space'></view>
         </swiper-item>

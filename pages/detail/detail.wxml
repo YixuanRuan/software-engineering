@@ -25,11 +25,11 @@
   <view class="cells_body">
     <view class="cell">
       <image class="cell_img" src="/images/detail/person_333.png"></image>
-      <text class="cell_text">姓名：{{project.name}}</text>
+      <text class="cell_text">姓名：{{laucher.name}}</text>
     </view>
     <view class="cell">
       <image class="cell_img" src="/images/detail/phone_333.png"></image>
-      <text class="cell_text">电话：{{project.phone}}</text>
+      <text class="cell_text">电话：{{laucher.phone}}</text>
     </view>
   </view>
 

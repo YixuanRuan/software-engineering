@@ -27,9 +27,13 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log("创建子项目")
+    console.log(options)
+    var num = parseInt(options.parentProjectId)
     this.setData({
-      "projectInfo.parentProjectId": options.parentProjectId
+      "projectInfo.parentProjectId": num
     })
+    console.log(this.data.projectInfo.parentProjectId)
   },
 
 
@@ -137,6 +141,16 @@ Page({
             requests.submitProjectInfo(that.data.projectInfo).then(
               data=>{
                 console.log(data)
+                if(data=="Success Create"){
+                  wx.showToast({
+                    title: '创建成功！',
+                  })
+                  setTimeout(function () {
+                    wx.navigateBack({
+                      delta: 1
+                    });
+                  }, 700)
+                }
               }
             )
           } else {

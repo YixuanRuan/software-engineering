@@ -7,22 +7,25 @@ Page({
     projects: [],
   },
   viewDetail: function (e) {
-    var id = e.currentTarget.id
-    console.log(e)
+    var projectId = e.currentTarget.dataset.projectid
+    console.log(e.currentTarget.dataset)
     wx.navigateTo({
-      url: "/pages/detail/detail?id=" + id,
+      url: "/pages/detail/detail?projectId=" + projectId,
     })
   },
-  onShow: function(){
-    var projects = []
-    projects = requests.getAllProjects()
-    // while (projects == undefined){
-    //   console.log(projects)
-    // }
-    console.log(1)
-    console.log(projects)
-    this.setData({
-      projects:projects
-    })
+  onShow: function () {
+    var that = this
+    app.getOpenId().then(
+      data => {
+        requests.getAllProjects(data).then(
+          data => {
+            console.log(data)
+            that.setData({
+              projects: data
+            })
+          }
+        )
+      }
+    )
   }
 })

@@ -1,3 +1,4 @@
+<wux-toast id="wux-toast" />
 <wux-select id="wux-select1" />
 <view class="page">
     <wux-cell-group class="page__hd">

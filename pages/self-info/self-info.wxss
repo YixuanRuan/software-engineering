@@ -115,3 +115,20 @@
   color: #2A94EE;
   font-size: 14px;
 }
+.weui-btn{
+  width: 80px;
+  margin-right: 25px;
+  background-color: #92de9c;
+  color: white;
+}
+
+.weui-btn-delete{
+  width: 80px;
+  background-color:#ffa1a7;
+  margin-left: 25px;
+  color: white;
+}
+
+.btn-area-top{
+  text-align:center;
+}

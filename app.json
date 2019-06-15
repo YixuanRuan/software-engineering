@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/self-info/self-info",
     "pages/score/score",
     "pages/test/test",
     
     
     "pages/myProjects/manageProject/manageProject",
-    "pages/search/search",
+    
     "pages/addProject/addProject",
     "pages/detail/detail",
     "pages/edit-info/edit-info",

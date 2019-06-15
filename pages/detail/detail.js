@@ -7,23 +7,31 @@ Page({
    * Page initial data
    */
   data: {
-    projectId:0,
-    project:{}
+    projectId: 0,
+    isJoined: false,
+    isLaucher: false,
+    subtask: [],
+    project: {},
+    laucher:{}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var projectId = options.projectId;
     this.setData({
       projectId: options.projectId,
     })
     var that=this
-    requests.getProjectByProjectIdAndUserId(app.globalData.openId, projectId).then(
+    requests.getProjectByProjectIdAndUserId(app.globalData.openId, options.projectId).then(
       data=>{
+        console.log(data)
         that.setData({
-          project:data
+          isJoined: data.isJoined,
+          isLaucher: data.isLaucher,
+          project: data.project,
+          subtask: data.subtask,
+          laucher: data.laucher
         })
       }
     )
@@ -32,9 +40,20 @@ Page({
   join: function(){
     requests.joinProject(app.globalData.openId,this.data.projectId).then(
       data=>{
-        wx.showToast({
-          title: '成功加入项目！'
-        })
+        if(data=="用户已加入该项目"){
+          wx.showToast({
+            title: '您已加入该项目！'
+          })
+        } else if (data == "人数过多"){
+          wx.showToast({
+            title: '人数过多！'
+          })
+        }else{
+          wx.showToast({
+            title: '成功申请项目！'
+          })
+        }
+
         setTimeout(function () {
           wx.navigateBack({
             delta: 1
