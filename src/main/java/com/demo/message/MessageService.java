@@ -26,7 +26,6 @@ public class MessageService {
 		message.setReceiveId(receiveId);
 		message.setTitle(title);
 		message.setText(text);
-		message.setSendId(0);
 		message.setReadFlag(false);
 		Date date=new Date();
 		date.getTime();
@@ -40,9 +39,9 @@ public class MessageService {
 		message.save();
 	}
 
-	public void delete(Integer userId) {
+	public void delete(Integer messageId) {
 		// TODO Auto-generated method stub
-		dao.deleteById(userId);
+		dao.deleteById(messageId);
 	}
 	public void setRead(int id) {
 		// TODO Auto-generated method stub

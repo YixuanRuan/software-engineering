@@ -30,6 +30,12 @@ private Joins dao = new Joins().dao();
 	}
 	
 	public boolean joinTaskBytaskid(int taskid,int userid) {
+		Task task=new TaskService().findById(taskid);
+		if(task.getCurrentPeople()+1>task.getPeople())
+		{
+			return false;
+		}
+		task.setCurrentPeople(task.getCurrentPeople()+1);
 		Joins join=new Joins();
 		Date date=new Date();
 		date.getTime();

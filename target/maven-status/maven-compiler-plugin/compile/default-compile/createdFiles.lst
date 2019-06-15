@@ -6,6 +6,7 @@ com\demo\task\TaskService.class
 com\demo\common\model\base\BaseCredit.class
 com\demo\common\model\base\BaseMessage.class
 com\demo\join\JoinController.class
+com\demo\common\model\base\BaseJudge.class
 com\demo\index\IndexController.class
 com\demo\credit\CreditController.class
 com\demo\common\model\_JFinalDemoGenerator.class
@@ -20,6 +21,7 @@ com\demo\project\ProjectController.class
 com\demo\credit\CreditService.class
 com\demo\common\model\base\BaseProject.class
 com\demo\common\model\Collection.class
+com\demo\common\model\Judge.class
 com\demo\join\JoinsService.class
 com\demo\common\DemoConfig.class
 com\demo\common\model\Project.class
@@ -29,3 +31,4 @@ com\demo\common\model\_MappingKit.class
 com\demo\message\MessageController.class
 com\demo\login\LoginController.class
 com\demo\common\model\Message.class
+com\demo\credit\judgeTable.class

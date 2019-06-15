@@ -60,12 +60,75 @@ public class JoinController extends Controller {
     		MessageService mservice = new MessageService();
     		String text="user: "+user.getName()+" "+" 加入了任务: "+task.getProjectContent();
     		System.out.println(text);
-    		mservice.save(rootid, "新的加入",text,1,taskid,userid);
+    		mservice.save(rootid, "用户加入通知",text,1,taskid,userid);
     		task.update();
     	}
     	renderJson();
     	
 	}
+    
+    public void userApplyTasks() {
+    	int userid = Integer.parseInt(String.valueOf(getPara("userid")));
+    	int taskid =  Integer.parseInt(String.valueOf(getPara("taskid")));
+    	UserService us= new UserService();
+    	User user=us.findById(userid);
+    	TaskService ts=new TaskService();
+    	Task task = ts.findById(taskid);
+    	if(service.isJoinTheTask(taskid,userid)==true)
+    	{
+    		renderJson("用户已加入该项目");
+    		return;
+    	}
+    	if(task.getCurrentPeople()+1>task.getPeople())
+    	{
+    		renderJson("人数过多");
+    		return;
+    	}
+    	
+    	int rootid=task.getCreatorId();
+    	MessageService mservice = new MessageService();
+    	String text="user: "+user.getName()+" "+" 申请加入任务: "+task.getProjectContent();
+    	mservice.save(rootid, "用户申请通知",text,1,taskid,userid);
+    	renderJson();
+    	
+	}
+    //同意时，判断能否加入，然后向申请者发送申请id
+    public void accept()
+    {
+    	int userid = Integer.parseInt(String.valueOf(getPara("userid")));
+    	int taskid =  Integer.parseInt(String.valueOf(getPara("taskid")));
+    	int dealerid =  Integer.parseInt(String.valueOf(getPara("dealerid")));
+    	UserService us= new UserService();
+    	User user=us.findById(userid);
+    	String name=new TaskService().findById(taskid).getProjectContent();
+    	if(service.isJoinTheTask(taskid,userid)==true)
+    	{
+    		renderJson("失败，用户已加入该项目");
+    		return;
+    	}
+    	
+    	if(service.joinTaskBytaskid(taskid, userid)==false) {
+    		MessageService ms=new MessageService();
+        	ms.save(userid, "用户申请进度通知", "加入项目："+name+" 失败！", 3, 1, dealerid);
+        	renderJson();
+    	}
+    	MessageService ms=new MessageService();
+    	ms.save(userid, "用户申请进度通知", "你已被允许加入项目："+name, 3, 1, dealerid);
+    	renderJson();
+    }
+    //拒绝一个人时，发送拒绝消息并且删除该信息
+    public void refuse()
+    {
+    	int applyid = Integer.parseInt(String.valueOf(getPara("applyid")));
+    	int dealerid = Integer.parseInt(String.valueOf(getPara("dealerid")));
+    	int messageid = Integer.parseInt(String.valueOf(getPara("messageid")));
+    	int taskid =  Integer.parseInt(String.valueOf(getPara("taskid")));
+    	String name =  new TaskService().findById(taskid).getProjectContent();
+    	MessageService ms=new MessageService();
+    	ms.delete(messageid);
+    	ms.save(applyid, "用户申请进度通知", "你申请加入的项目："+name+" 已被拒绝！", 3, 1, dealerid);
+    	renderJson();
+    }
     public void getJoin()
     {
     	int taskId = Integer.parseInt(getPara("taskId"));

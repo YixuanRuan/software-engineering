@@ -25,14 +25,12 @@ public class CreditController extends Controller {
 	{
 		String json=getPara("User");
 		return FastJson.getJson().parse(json, User.class);
-		
 	}
 	public void getJudge()
 	{
 		String json=getRawData();
 		Judge j= FastJson.getJson().parse(json, Judge.class);
-		
-       renderJson();
+		renderJson();
 	}
 	public void addPaise()
 	{
@@ -73,6 +71,36 @@ public class CreditController extends Controller {
 		renderJson();
 	}
 	
+	public void UpdateCredit() {
+		String user = getPara("userId");
+		String check = getPara("checked");
+		user = user.substring(1, user.length()-1);
+		check = check.substring(1, check.length()-1);
+		String[] UserArr = user.split(",");
+		String[] CheckArr = check.split(",");
+		for(int i=0;i<UserArr.length;++i) {
+			Credit credit = service.findByUserId(Integer.parseInt(UserArr[i]));
+			Integer NowScore = credit.getInt("creditScore");
+			if(CheckArr[i].equals("true")) {
+				credit.setSuccess(credit.getInt("success") + 1);
+				if(NowScore.intValue() < 100)
+					credit.setCreditScore(NowScore.intValue() + 1);
+			} else {
+				credit.setFailure(credit.getInt("failure") + 1);
+				if(NowScore.intValue() > 0)
+					credit.setCreditScore(NowScore.intValue() - 1);
+			}
+			credit.update();
+		}
+		renderJson("Update Success");
+	}
 }
+
+
+
+
+
+
+
 
 

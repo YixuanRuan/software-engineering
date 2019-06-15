@@ -49,7 +49,7 @@ public Task dao = new Task().dao();
 	}
 	public List<Task> findAvailableTask(Integer userId)
 	{
-		 String sql="select * from task where not exists(select * from task ,joins where task.taskid=joins.taskid and joins.userId=? )and creatorId != ?";
+		String sql="select * from task ta where not exists(select * from task tb ,joins where tb.taskid=joins.taskid and joins.userId=? and ta.taskId=tb.taskId )and creatorId != ?";
 			return dao.find(sql, userId,userId);
 	}
 	public boolean isMyCreateTasks(int taskId, int userId) {
