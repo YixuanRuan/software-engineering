@@ -1,5 +1,6 @@
 import { $wuxToast } from '../../dist/index'
 const app = getApp();
+const Url= 'http://localhost:8080'
 Page({
   data: {
     messageId: '',
@@ -24,7 +25,7 @@ Page({
   onShow: function (options) {
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/message/get',
+      url: Url+'/message/get',
       data: {
         id: app.globalData.openId
       },
@@ -51,7 +52,7 @@ Page({
         console.log(num)
 
         wx.request({
-          url: 'http://114.115.151.96:8080/user/get',
+          url: Url+'/user/get',
           data: {
             id: app.globalData.openId
           },
@@ -114,7 +115,7 @@ Page({
       })
 
       wx.request({
-        url: 'http://114.115.151.96:8080/task/getTask',
+        url: Url +'/task/getTask',
         data: {
           taskid: notice.taskId
         },
@@ -146,7 +147,7 @@ Page({
     
 
     wx.request({
-      url: 'http://114.115.151.96:8080/message/setRead',
+      url: Url +'/message/setRead',
       data: {
         messageId: notice.messageId
       },
@@ -179,7 +180,7 @@ Page({
   agreeApply:function(e){
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/join/accept',
+      url: Url + '/join/accept',
       data: {
         userid: that.data.userId,
         taskid: that.data.taskId,
@@ -213,7 +214,7 @@ Page({
   refuseApply: function (e) {
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/join/refuse',
+      url: Url +'/join/refuse',
       data: {
         applyid: that.data.userId,
         taskid: that.data.taskId,

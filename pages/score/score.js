@@ -1,5 +1,5 @@
 import { $wuxToast } from '../../dist/index'
-
+const Url= 'http://localhost:8080'
 Page({
   data: {
     taskName:'软件工程大作业',
@@ -24,7 +24,7 @@ Page({
     console.log(options)
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/user/findJoiner',
+      url: Url+'/user/findJoiner',
       data: {
         taskId: options.taskId,
       },
@@ -80,7 +80,7 @@ Page({
 
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/credit/UpdateCredit',
+      url: Url+'/credit/UpdateCredit',
       data: {
         userId: this.data.userId,
         checked: this.data.checked

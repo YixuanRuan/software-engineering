@@ -1,4 +1,5 @@
 // pages/show-info/show-info.js
+const Url = 'http://localhost:8080'
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
     var that = this
     console.log(options.userId);
     wx.request({
-      url: 'http://114.115.151.96:8080/user/get',
+      url: Url+'/user/get',
       
       data: {
         id: options.userId

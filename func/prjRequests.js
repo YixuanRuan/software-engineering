@@ -1,9 +1,10 @@
 const app=getApp()
+const Url ="http://localhost:8080"
 // 成功
 function getProjectByProjectIdAndUserId(userId,projectId){
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/isMyCreateTask', //仅为示例，并非真实的接口地址
+      url: Url+'/task/isMyCreateTask', //仅为示例，并非真实的接口地址
       data: {
         userId:userId,
         taskId:projectId
@@ -25,7 +26,7 @@ function getProjectByProjectIdAndUserId(userId,projectId){
 function getAllProjects(userId) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/noRelationTask', //仅为示例，并非真实的接口地址
+      url: Url +'/task/noRelationTask', //仅为示例，并非真实的接口地址
       data: {
         userid:userId
       },
@@ -45,7 +46,7 @@ function getAllProjects(userId) {
 function getJoinedProjects(userId) {
   return new Promise((resolve, reject) => { 
     wx.request({
-      url: 'http://114.115.151.96:8080/task/userJoinTasks', //仅为示例，并非真实的接口地址
+      url: Url +'/task/userJoinTasks', //仅为示例，并非真实的接口地址
       data: {
         userid:userId,
       },
@@ -64,7 +65,7 @@ function getJoinedProjects(userId) {
 function getLauchedProjects(userId) {
   return new Promise((resolve, reject) =>  { 
     wx.request({
-      url: 'http://114.115.151.96:8080/task/userCreateTasks', //仅为示例，并非真实的接口地址
+      url: Url +'/task/userCreateTasks', //仅为示例，并非真实的接口地址
       data: {
         userid:userId,
       },
@@ -83,7 +84,7 @@ function getLauchedProjects(userId) {
 function getFinishedProjects(userId) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/userFinishTasks', //仅为示例，并非真实的接口地址
+      url: Url +'/task/userFinishTasks', //仅为示例，并非真实的接口地址
       data: {
         userid: userId,
       },
@@ -102,7 +103,7 @@ function getFinishedProjects(userId) {
 function submitProjectInfo(projectInfo){
   return new Promise((resolve, reject)=> {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/CreateProject', //仅为示例，并非真实的接口地址
+      url: Url + '/task/CreateProject', //仅为示例，并非真实的接口地址
       data: {
         taskId:projectInfo.projectId,
         parentProjectId: projectInfo.parentProjectId,
@@ -131,7 +132,7 @@ function submitProjectInfo(projectInfo){
 function changeProjectInfo(projectInfo) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/CreateProject', //仅为示例，并非真实的接口地址
+      url: Url +'/task/CreateProject', //仅为示例，并非真实的接口地址
       data: {
         taskId: projectInfo.taskId,
         parentProjectId: projectInfo.parentProjectId,
@@ -160,7 +161,7 @@ function changeProjectInfo(projectInfo) {
 function joinProject(userId,projectId) {
   return new Promise((resolve, reject) =>  {
     wx.request({
-      url: 'http://114.115.151.96:8080/join/userApplyTasks', //仅为示例，并非真实的接口地址
+      url: Url +'/join/userApplyTasks', //仅为示例，并非真实的接口地址
       data: {
         userid: userId,
         taskid: projectId,
@@ -181,7 +182,7 @@ function joinProject(userId,projectId) {
 function finishProject(userId, projectId) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/join/setFinish', //仅为示例，并非真实的接口地址
+      url: Url +'/join/setFinish', //仅为示例，并非真实的接口地址
       data: {
         taskId: projectId,
         userId: userId
@@ -203,7 +204,7 @@ function finishProject(userId, projectId) {
 function quitProject(userId, projectId) {
   return new Promise((resolve, reject) =>  { 
     wx.request({
-      url: 'http://114.115.151.96:8080/join/delete', //仅为示例，并非真实的接口地址
+      url: Url +'/join/delete', //仅为示例，并非真实的接口地址
       data: {
         userId: userId,
         taskId: projectId,
@@ -225,7 +226,7 @@ function quitProject(userId, projectId) {
 function deleteProject(userId, projectId) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/task/delete', //仅为示例，并非真实的接口地址
+      url: Url +'/task/delete', //仅为示例，并非真实的接口地址
       data: {
         userId: userId,
         taskId: projectId,
@@ -246,7 +247,7 @@ function deleteProject(userId, projectId) {
 function getUserId(code){
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://114.115.151.96:8080/login/auth', //仅为示例，并非真实的接口地址
+      url: Url+'/login/auth', //仅为示例，并非真实的接口地址
       data: {
         js_code: code
       },

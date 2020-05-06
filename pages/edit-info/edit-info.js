@@ -2,7 +2,7 @@ import { $wuxSelect } from '../../dist/index'
 import { $wuxToast } from '../../dist/index'
 const isTel = (value) => !/^1[34578]\d{9}$/.test(value)
 const app = getApp();
-
+const Url='http://localhost:8080'
 Page({
   data: {
     name: '请输入您的姓名',
@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/user/get',
+      url: Url+'/user/get',
 
       data: {
         id: app.globalData.openId
@@ -76,7 +76,7 @@ Page({
     console.log('form发生了submit事件，携带数据为：', this.data)
     var that = this
     wx.request({
-      url: 'http://114.115.151.96:8080/user/update',
+      url:Url+ '/user/update',
       data: {
         id: app.globalData.openId,
         name: that.data.name,
