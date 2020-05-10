@@ -10,11 +10,18 @@
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
-	"appid": "wxd4b4a73047117fd0",
+	"appid": "wxcb83e29c3ce893ba",
 	"projectname": "wux-test",
 	"debugOptions": {
 		"hidedInDevtools": []

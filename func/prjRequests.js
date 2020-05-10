@@ -1,5 +1,5 @@
 const app=getApp()
-const Url ="http://localhost:8080"
+const Url ="http://106.13.42.89:8080"
 // 成功
 function getProjectByProjectIdAndUserId(userId,projectId){
   return new Promise((resolve, reject) => {

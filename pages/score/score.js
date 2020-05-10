@@ -1,5 +1,5 @@
 import { $wuxToast } from '../../dist/index'
-const Url= 'http://localhost:8080'
+const Url = 'http://106.13.42.89:8080'
 Page({
   data: {
     taskName:'软件工程大作业',

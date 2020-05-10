@@ -2,7 +2,7 @@ import { $wuxSelect } from '../../dist/index'
 import { $wuxToast } from '../../dist/index'
 const isTel = (value) => !/^1[34578]\d{9}$/.test(value)
 const app = getApp();
-const Url='http://localhost:8080'
+const Url ='http://106.13.42.89:8080'
 Page({
   data: {
     name: '请输入您的姓名',
